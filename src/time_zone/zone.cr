@@ -18,22 +18,32 @@ module TimeZone
   end
 
   abstract class IPeriod
+    getter offset : Offset
+
     def to_local(time : ::Time)
       offset.shift(time)
     end
 
     abstract includes?(time : ::Time)
-    abstract offset
   end
 
   class StartPeriod < IPeriod
-    getter end_transition : Transition, offset : Offset
+    getter end_transition : Transition
 
     def initialize(@end_transition, @offset)
     end
 
     def includes?(time : ::Time)
       time.timestamp < @end_transition.timestamp
+    end
+  end
+
+  class FixedOffsetPeriod < IPeriod
+    def initialize(@offset)
+    end
+
+    def includes?(time)
+      true
     end
   end
 

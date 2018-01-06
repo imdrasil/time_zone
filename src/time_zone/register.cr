@@ -14,21 +14,40 @@ module TimeZone
 
       def build(name)
         periods = [] of IPeriod
-        @transitions[0].tap { |t| periods << StartPeriod.new(t, @offsets[:o0]) }
 
-        previous_transition = nil
-        @transitions.each do |t|
-          if previous_transition
-            periods << Period.new(previous_transition.not_nil!, t)
+        if @transitions,size == 0
+          periods << FixedOffsetPeriod.new(@offsets[:o0])
+        else
+          @transitions[0].tap { |t| periods << StartPeriod.new(t, @offsets[:o0]) }
+
+          previous_transition = nil
+          @transitions.each do |t|
+            if previous_transition
+              periods << Period.new(previous_transition.not_nil!, t)
+            end
+            previous_transition = t
           end
-          previous_transition = t
+
+          @transitions[-1].tap { |t| periods << LastPeriod.new(t, t.offset) }
         end
 
-        @transitions[-1].tap { |t| periods << LastPeriod.new(t, t.offset) }
-
         set = PeriodSet.new(periods)
-
         Zone.add(name, Zone.new(name, set))
+      end
+    end
+
+    class CountryBuilder
+      @zones = Array(String)
+
+      def initialize(@code : String, @name : String)
+      end
+
+      def timezone(name, lat_nom, lat_denom, lng_nom, lng_denom, comment)
+        @zones << name
+      end
+
+      def build
+        Country.add(Country.new(@name, @code, @zones))
       end
     end
 
@@ -42,7 +61,10 @@ module TimeZone
       Zone.add(LinkedZone.new(name, target_zone))
     end
 
-    def self.country
+    def self.country(code, name, &block)
+      builder = CountryBuilder.new(code, name)
+      yield builder
+      builder.build
     end
   end
 end
