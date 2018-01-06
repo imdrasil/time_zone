@@ -4,6 +4,10 @@ describe TimeZone do
   # TODO: Write tests
 
   it "works" do
-    false.should eq(true)
+    tz = TimeZone::Zone.get("America/New_York")
+    time = Time.utc(2005, 8, 29, 15, 35, 0)
+    local = tz.utc_to_local(time)
+    puts time
+    puts local
   end
 end

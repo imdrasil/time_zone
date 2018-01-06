@@ -397,7 +397,6 @@ module TZInfo
             file.puts('  end') # end module Data
             file.puts('end') # end module TZInfo
           end
-          
         end
     end
     
@@ -573,7 +572,7 @@ module TZInfo
         dir = File.join(output_dir, 'definitions', @path_elements.join(File::SEPARATOR))
         FileUtils.mkdir_p(dir)
         
-        open_file(File.join(output_dir, 'definitions', @name_elements.join(File::SEPARATOR)) + '.rb', 'w', :external_encoding => 'UTF-8', :universal_newline => true) do |file|
+        open_file(File.join(output_dir, 'definitions', @name_elements.join(File::SEPARATOR)) + '.cr', 'w', :external_encoding => 'UTF-8', :universal_newline => true) do |file|
 
           file.instance_variable_set(:@tz_indent, 0)
           
@@ -589,34 +588,13 @@ module TZInfo
           file.puts('')
           file.puts('# This file contains data derived from the IANA Time Zone Database')
           file.puts('# (http://www.iana.org/time-zones).')
-          file.puts('')
-          file.puts('module TZInfo')
-          file.indent(2)
-          file.puts('module Data')
-          file.indent(2)
-          file.puts('module Definitions')
-          file.indent(2)                
+          file.puts('')               
           
           @name_elements.each do |part| 
-            file.puts("module #{part}")
-            file.indent(2)
+            file.puts("# #{part}")
           end
-          
-          file.puts('include TimezoneDefinition')
-          file.puts('')
           
           yield file
-                          
-          @name_elements.each do
-            file.indent(-2)  
-            file.puts('end')          
-          end
-          file.indent(-2)
-          file.puts('end') # end module Definitions
-          file.indent(-2)
-          file.puts('end') # end module Data
-          file.indent(-2)
-          file.puts('end') # end module TZInfo
         end
       end    
     end
@@ -639,7 +617,7 @@ module TZInfo
         puts "writing link #{name}"
               
         create_file(output_dir) {|file|
-          file.puts("linked_timezone #{quote_str(@name)}, #{quote_str(@link_to.name)}")        
+          file.puts("TimeZone::Register.linked_timezone #{quote_str(@name)}, #{quote_str(@link_to.name)}")        
         }
       end
       
@@ -674,7 +652,7 @@ module TZInfo
         
         create_file(output_dir) {|file|        
           
-          file.puts("timezone #{quote_str(@name)} do |tz|")
+          file.puts("TimeZone::Register.timezone #{quote_str(@name)} do |tz|")
           file.indent(2)
                 
           transitions = find_transitions
@@ -1320,7 +1298,7 @@ module TZInfo
         file.puts s
         
         @zones.each do |zone|
-          file.puts "c.timezone #{quote_str(zone.timezone.name)}, #{zone.location.latitude.numerator}, #{zone.location.latitude.denominator}, #{zone.location.longitude.numerator}, #{zone.location.longitude.denominator}#{zone.description.nil? ? '' : ', ' + quote_str(zone.description)}" 
+          file.puts "  c.timezone #{quote_str(zone.timezone.name)}, #{zone.location.latitude.numerator}, #{zone.location.latitude.denominator}, #{zone.location.longitude.numerator}, #{zone.location.longitude.denominator}#{zone.description.nil? ? '' : ', ' + quote_str(zone.description)}" 
         end
         
         file.puts 'end'
