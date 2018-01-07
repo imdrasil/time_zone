@@ -9,5 +9,6 @@ describe TimeZone do
     local = tz.utc_to_local(time)
     puts time
     puts local
+    puts tz.local_to_utc(local)
   end
 end

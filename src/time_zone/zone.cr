@@ -5,8 +5,16 @@ module TimeZone
     def initialize(@zone_offset, @dst_offset, @zone_id)
     end
 
-    def shift(time)
+    def shift(time : ::Time)
       time + zone_offset.seconds + dst_offset.seconds
+    end
+
+    def shift(time : Int64)
+      time + zone_offset + dst_offset
+    end
+
+    def unshift(time : ::Time)
+      time - zone_offset.seconds - dst_offset.seconds
     end
   end
 
@@ -34,10 +42,19 @@ module TimeZone
       offset.shift(time)
     end
 
+    def to_utc(time : ::Time)
+      offset.unshift(time)
+    end
+
     def includes?(time : ::Time)
       (self <=> time) == 0
     end
 
+    def dst?
+      offset.dst_offset != 0
+    end
+
+    abstract def in_clock_time?(time : ::Time)
     abstract def <=>(time : ::Time)
   end
 
@@ -51,6 +68,10 @@ module TimeZone
       puts "<= " + @end_transition.timestamp.to_s
       @end_transition.timestamp <= time.epoch ? -1 : 0
     end
+
+    def in_clock_time?(time)
+      time.epoch < offset.shift(@end_transition.timestamp)
+    end
   end
 
   class FixedOffsetPeriod < IPeriod
@@ -59,6 +80,10 @@ module TimeZone
 
     def <=>(time : ::Time)
       0
+    end
+
+    def in_clock_time?(time)
+      true
     end
   end
 
@@ -72,6 +97,10 @@ module TimeZone
       puts "> " + @start_transition.timestamp.to_s
       @start_transition.timestamp > time.epoch ? 1 : 0
     end
+
+    def in_clock_time?(time)
+      time.epoch >= offset.shift(@start_transition.timestamp)
+    end
   end
 
   class Period < StartPeriod
@@ -81,6 +110,7 @@ module TimeZone
       # super(@end_year, @end_month, @end_year, @end_timestamp)
     end
 
+    # Using UTC timestamps
     def <=>(time : ::Time)
       st = time.epoch
       if @start_transition.timestamp > st
@@ -90,6 +120,12 @@ module TimeZone
       else
         0
       end
+    end
+
+    def in_clock_time?(time : ::Time)
+      ts = time.epoch
+      ts < offset.shift(@end_transition.timestamp) &&
+        ts >= offset.shift(@start_transition.timestamp)
     end
   end
 
@@ -112,7 +148,7 @@ module TimeZone
       @periods << rule
     end
 
-    def find(time : ::Time)
+    def find_in_utc(time : ::Time)
       if @cached_period
         cp = @cached_period.not_nil!
         if cp.includes?(time)
@@ -130,18 +166,43 @@ module TimeZone
     end
 
     def to_local(time : ::Time)
-      period = find(time)
-      period.to_local(time)
+      find_in_utc(time).to_local(time)
     end
 
-    def periods_for_local(time : ::Time)
+    def find_in_local(time : ::Time, dst : Symbol = :none)
       timestamp = time.epoch
 
-      minimum_possible_time = time - MAXIMUM_OFFSET
-      maximum_possible_time = time + MAXIMUM_OFFSET
+      minimum_possible_time = time - MAXIMUM_OFFSET.seconds
+      maximum_possible_time = time + MAXIMUM_OFFSET.seconds
 
-      period1 = find(minimum_possible_time)
-      period2 = find(maximum_possible_time)
+      period1 = find_in_utc(minimum_possible_time)
+      period2 = find_in_utc(maximum_possible_time)
+
+      return period1 if period1 == period2
+
+      period1_satisfied = period1.in_clock_time?(time)
+      period2_satisfied = period2.in_clock_time?(time)
+
+      if period1_satisfied && period2_satisfied
+        case dst
+        when :none
+          raise "Ambiguous time"
+        when :dst
+          return period1 if period1.dst?
+          return period2 if period2.dst?
+          raise "Ambiguous time"
+        when :sdt
+          return period1 unless period1.dst?
+          return period2 unless period2.dst?
+          raise "Ambiguous time"
+        else
+          raise ArgumentError.new("Wrong dst argument")
+        end
+      elsif period1_satisfied
+        period1
+      else
+        period2
+      end
     end
   end
 
@@ -174,10 +235,15 @@ module TimeZone
     end
 
     def local_to_utc(time : ::Time)
+      @period_set.find_in_local(time).to_utc(time)
     end
 
     def utc_to_local(time : ::Time)
       @period_set.to_local(time)
+    end
+
+    def now
+      utc_to_local(Time.utc_now)
     end
 
     def self.get(name : String)
