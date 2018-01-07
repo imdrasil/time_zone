@@ -7,9 +7,16 @@ require "./time_zone/version"
 
 require "./time_zone/utils"
 
+require "./time_zone/offset"
+require "./time_zone/period"
+require "./time_zone/period_set"
 require "./time_zone/zone"
+require "./time_zone/time"
 require "./time_zone/country"
 require "./time_zone/register"
+
+# Data
+
 require "./time_zone/data/indexes/countries"
 require "./time_zone/data/definitions/*"
 
@@ -29,3 +36,13 @@ require "./time_zone/data/definitions/Indian/*"
 require "./time_zone/data/definitions/Mexico/*"
 require "./time_zone/data/definitions/Pacific/*"
 require "./time_zone/data/definitions/US/*"
+
+struct Time
+  def to_time_zone_time
+    TimeZone::Time.new(seconds: @seconds, nanoseconds: nanoseconds, zone: TimeZone::Zone.default)
+  end
+
+  def self.zone
+    TimeZone::Zone.default
+  end
+end
