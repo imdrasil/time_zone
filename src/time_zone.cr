@@ -39,7 +39,7 @@ require "./time_zone/data/definitions/US/*"
 
 struct Time
   def to_time_zone_time
-    TimeZone::Time.new(seconds: @seconds, nanoseconds: nanoseconds, zone: TimeZone::Zone.default)
+    TimeZone::Zone.default.new(seconds: @seconds, nanoseconds: @nanoseconds)
   end
 
   def self.zone

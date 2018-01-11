@@ -16,5 +16,25 @@ module TimeZone
     def unshift(time : ::Time)
       time - zone_offset.seconds - dst_offset.seconds
     end
+
+    def hours
+      zone_offset / ::Time::SECONDS_PER_HOUR
+    end
+
+    def dst?
+      @dst_offset != 0
+    end
+
+    def sdt?
+      !dst?
+    end
+
+    def positive?
+      @zone_offset > 0
+    end
+
+    def negative?
+      @zone_offset < 0
+    end
   end
 end

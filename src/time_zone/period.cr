@@ -14,7 +14,7 @@ module TimeZone
       offset.unshift(time)
     end
 
-    def includes?(time : ::Time)
+    def includes?(time : ::Time | Int64)
       (self <=> time) == 0
     end
 
@@ -22,8 +22,16 @@ module TimeZone
       offset.dst_offset != 0
     end
 
-    abstract def in_clock_time?(time : ::Time)
-    abstract def <=>(time : ::Time)
+    def <=>(time : ::Time)
+      self.<=>(time.epoch)
+    end
+
+    def in_clock_time?(time : ::Time)
+      in_clock_time?(time.epoch)
+    end
+
+    abstract def in_clock_time?(time : Int64)
+    abstract def <=>(time : Int64)
   end
 
   class StartPeriod < IPeriod
@@ -32,13 +40,12 @@ module TimeZone
     def initialize(@end_transition, @offset)
     end
 
-    def <=>(time : ::Time)
-      puts "<= " + @end_transition.timestamp.to_s
-      @end_transition.timestamp <= time.epoch ? -1 : 0
+    def <=>(time : Int64)
+      @end_transition.timestamp <= time ? -1 : 0
     end
 
-    def in_clock_time?(time)
-      time.epoch < offset.shift(@end_transition.timestamp)
+    def in_clock_time?(time : Int64)
+      time < offset.shift(@end_transition.timestamp)
     end
   end
 
@@ -46,7 +53,7 @@ module TimeZone
     def initialize(@offset)
     end
 
-    def <=>(time : ::Time)
+    def <=>(time : Int64)
       0
     end
 
@@ -61,13 +68,12 @@ module TimeZone
     def initialize(@start_transition, @offset)
     end
 
-    def <=>(time : ::Time)
-      puts "> " + @start_transition.timestamp.to_s
-      @start_transition.timestamp > time.epoch ? 1 : 0
+    def <=>(time : Int64)
+      @start_transition.timestamp > time ? 1 : 0
     end
 
-    def in_clock_time?(time)
-      time.epoch >= offset.shift(@start_transition.timestamp)
+    def in_clock_time?(time : Int64)
+      time >= offset.shift(@start_transition.timestamp)
     end
   end
 
@@ -79,21 +85,19 @@ module TimeZone
     end
 
     # Using UTC timestamps
-    def <=>(time : ::Time)
-      st = time.epoch
-      if @start_transition.timestamp > st
+    def <=>(time : Int64)
+      if @start_transition.timestamp > time
         1
-      elsif @end_transition.timestamp <= st
+      elsif @end_transition.timestamp <= time
         -1
       else
         0
       end
     end
 
-    def in_clock_time?(time : ::Time)
-      ts = time.epoch
-      ts < offset.shift(@end_transition.timestamp) &&
-        ts >= offset.shift(@start_transition.timestamp)
+    def in_clock_time?(time : Int64)
+      time < offset.shift(@end_transition.timestamp) &&
+        time >= offset.shift(@start_transition.timestamp)
     end
   end
 end

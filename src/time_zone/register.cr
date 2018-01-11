@@ -17,26 +17,26 @@ module TimeZone
       end
 
       def build(name)
-        periods = [] of IPeriod
+        set =
+          if @transitions.size == 0
+            FixedOffsetPeriodSet.new([FixedOffsetPeriod.new(@offsets[:o0])] of IPeriod)
+          else
+            periods = [] of IPeriod
+            @transitions[0].tap { |t| periods << StartPeriod.new(t, @offsets[:o0]) }
 
-        if @transitions.size == 0
-          periods << FixedOffsetPeriod.new(@offsets[:o0])
-        else
-          @transitions[0].tap { |t| periods << StartPeriod.new(t, @offsets[:o0]) }
-
-          previous_transition = nil
-          @transitions.each do |t|
-            if previous_transition
-              pt = previous_transition.not_nil!
-              periods << Period.new(pt, t, pt.offset)
+            previous_transition = nil
+            @transitions.each do |t|
+              if previous_transition
+                pt = previous_transition.not_nil!
+                periods << Period.new(pt, t, pt.offset)
+              end
+              previous_transition = t
             end
-            previous_transition = t
+
+            @transitions[-1].tap { |t| periods << LastPeriod.new(t, t.offset) }
+            PeriodSet.new(periods)
           end
 
-          @transitions[-1].tap { |t| periods << LastPeriod.new(t, t.offset) }
-        end
-
-        set = PeriodSet.new(periods)
         Zone.add(Zone.new(name, set))
       end
     end

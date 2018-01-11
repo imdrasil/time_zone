@@ -8,21 +8,8 @@ module TimeZone
       # Time.parse("2016-04-05", "%F") # => 2016-04-05 00:00:00
       # ```
       # TODO: format
-      def parse(time : String, pattern : String, kind = Kind::Unspecified) : Time
-        Format.new(pattern, kind).parse(time)
-      end
-
-      protected def absolute_days(year, month, day)
-        days = leap_year?(year) ? DAYS_MONTH_LEAP : DAYS_MONTH
-
-        temp = 0
-        m = 1
-        while m < month
-          temp += days[m]
-          m += 1
-        end
-
-        (day - 1) + temp + (365*(year - 1)) + ((year - 1)/4) - ((year - 1)/100) + ((year - 1)/400)
+      def parse(time : String, pattern : String, zone : Zone? = nil) : Time
+        Format.new(pattern, zone).parse(time)
       end
 
       # Returns the local time offset in minutes relative to GMT.

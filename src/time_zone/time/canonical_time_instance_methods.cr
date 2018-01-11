@@ -5,13 +5,18 @@ module TimeZone
       alias DayOfWeek = ::Time::DayOfWeek
       alias Span = ::Time::Span
       alias MonthSpan = ::Time::MonthSpan
-      alias Format = ::Time::Format
 
       SECONDS_PER_DAY             = ::Time::SECONDS_PER_DAY
       SECONDS_PER_HOUR            = ::Time::SECONDS_PER_HOUR
       SECONDS_PER_MINUTE          = ::Time::SECONDS_PER_MINUTE
       NANOSECONDS_PER_MILLISECOND = ::Time::NANOSECONDS_PER_MILLISECOND
       UNIX_SECONDS                = ::Time::UNIX_SECONDS
+      DAYS_MONTH_LEAP             = ::Time::DAYS_MONTH_LEAP
+      DAYS_MONTH                  = ::Time::DAYS_MONTH
+      DAYS_PER_400_YEARS          = ::Time::DAYS_PER_400_YEARS
+      DAYS_PER_100_YEARS          = ::Time::DAYS_PER_100_YEARS
+      DAYS_PER_4_YEARS            = ::Time::DAYS_PER_4_YEARS
+      NANOSECONDS_PER_SECOND      = ::Time::NANOSECONDS_PER_SECOND
 
       def clone : self
         self
@@ -107,7 +112,7 @@ module TimeZone
         case
         when utc?
           io << " UTC"
-        when local?
+        else
           Format.new(" %:z").format(self, io)
         end
         io

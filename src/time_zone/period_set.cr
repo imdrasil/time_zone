@@ -4,7 +4,8 @@ module TimeZone
 
     include BSearch
 
-    @periods : Array(IPeriod) = [] of IPeriod
+    getter periods : Array(IPeriod) = [] of IPeriod
+
     @cached_period : IPeriod?
 
     def initialize
@@ -18,7 +19,7 @@ module TimeZone
       @periods << rule
     end
 
-    def find_in_utc(time : ::Time)
+    def find_in_utc(time : ::Time | Int64)
       if @cached_period
         cp = @cached_period.not_nil!
         if cp.includes?(time)
@@ -40,10 +41,12 @@ module TimeZone
     end
 
     def find_in_local(time : ::Time, dst : Symbol = :none)
-      timestamp = time.epoch
+      find_in_local(time.epoch, dst)
+    end
 
-      minimum_possible_time = time - MAXIMUM_OFFSET.seconds
-      maximum_possible_time = time + MAXIMUM_OFFSET.seconds
+    def find_in_local(time : Int64, dst : Symbol = :none)
+      minimum_possible_time = time - MAXIMUM_OFFSET
+      maximum_possible_time = time + MAXIMUM_OFFSET
 
       period1 = find_in_utc(minimum_possible_time)
       period2 = find_in_utc(maximum_possible_time)
@@ -73,6 +76,24 @@ module TimeZone
       else
         period2
       end
+    end
+  end
+
+  class FixedOffsetPeriodSet < PeriodSet
+    def add(period)
+      raise "Can't add period to #{self.class.to_s}"
+    end
+
+    def find_it_utc(_time : ::Time)
+      @periods[0]
+    end
+
+    def find_in_local(_time : ::Time, _dst : Symbol = :none)
+      @periods[0]
+    end
+
+    def find_in_local(_timestamp : Int64, _dst : Symbol = :none)
+      @periods[0]
     end
   end
 end
