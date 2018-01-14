@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Bangkok
+#  Bangkok
 TimeZone::Register.timezone "Asia/Bangkok" do |tz|
   tz.offset :o0, 24124, 0, :LMT
   tz.offset :o1, 24124, 0, :BMT

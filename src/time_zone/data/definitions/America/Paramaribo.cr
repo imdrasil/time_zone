@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Paramaribo
+#  Paramaribo
 TimeZone::Register.timezone "America/Paramaribo" do |tz|
   tz.offset :o0, -13240, 0, :LMT
   tz.offset :o1, -13252, 0, :PMT

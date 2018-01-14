@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Indian
-# Maldives
+#  Maldives
 TimeZone::Register.timezone "Indian/Maldives" do |tz|
   tz.offset :o0, 17640, 0, :LMT
   tz.offset :o1, 17640, 0, :MMT

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Curacao
+#  Curacao
 TimeZone::Register.timezone "America/Curacao" do |tz|
   tz.offset :o0, -16547, 0, :LMT
   tz.offset :o1, -16200, 0, :"-0430"

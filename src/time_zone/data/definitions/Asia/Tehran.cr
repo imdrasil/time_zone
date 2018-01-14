@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Tehran
+#  Tehran
 TimeZone::Register.timezone "Asia/Tehran" do |tz|
   tz.offset :o0, 12344, 0, :LMT
   tz.offset :o1, 12344, 0, :TMT

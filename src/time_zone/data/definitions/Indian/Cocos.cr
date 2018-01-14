@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Indian
-# Cocos
+#  Cocos
 TimeZone::Register.timezone "Indian/Cocos" do |tz|
   tz.offset :o0, 23260, 0, :LMT
   tz.offset :o1, 23400, 0, :"+0630"

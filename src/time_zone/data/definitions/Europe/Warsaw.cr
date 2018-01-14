@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Warsaw
+#  Warsaw
 TimeZone::Register.timezone "Europe/Warsaw" do |tz|
   tz.offset :o0, 5040, 0, :LMT
   tz.offset :o1, 5040, 0, :WMT

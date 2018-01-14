@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# Tripoli
+#  Tripoli
 TimeZone::Register.timezone "Africa/Tripoli" do |tz|
   tz.offset :o0, 3164, 0, :LMT
   tz.offset :o1, 3600, 0, :CET

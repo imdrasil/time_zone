@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Manila
+#  Manila
 TimeZone::Register.timezone "Asia/Manila" do |tz|
   tz.offset :o0, -57360, 0, :LMT
   tz.offset :o1, 29040, 0, :LMT

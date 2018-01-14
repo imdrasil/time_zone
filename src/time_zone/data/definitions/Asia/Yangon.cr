@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Yangon
+#  Yangon
 TimeZone::Register.timezone "Asia/Yangon" do |tz|
   tz.offset :o0, 23087, 0, :LMT
   tz.offset :o1, 23087, 0, :RMT

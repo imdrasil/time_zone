@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Punta_Arenas
+#  Punta_Arenas
 TimeZone::Register.timezone "America/Punta_Arenas" do |tz|
   tz.offset :o0, -17020, 0, :LMT
   tz.offset :o1, -16966, 0, :SMT

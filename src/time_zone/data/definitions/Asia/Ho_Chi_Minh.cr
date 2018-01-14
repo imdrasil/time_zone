@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Ho_Chi_Minh
+#  Ho_Chi_Minh
 TimeZone::Register.timezone "Asia/Ho_Chi_Minh" do |tz|
   tz.offset :o0, 25600, 0, :LMT
   tz.offset :o1, 25590, 0, :PLMT

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Dili
+#  Dili
 TimeZone::Register.timezone "Asia/Dili" do |tz|
   tz.offset :o0, 30140, 0, :LMT
   tz.offset :o1, 28800, 0, :"+08"

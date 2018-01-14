@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# Casablanca
+#  Casablanca
 TimeZone::Register.timezone "Africa/Casablanca" do |tz|
   tz.offset :o0, -1820, 0, :LMT
   tz.offset :o1, 0, 0, :WET

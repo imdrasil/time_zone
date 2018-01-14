@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Australia
-# Perth
+#  Perth
 TimeZone::Register.timezone "Australia/Perth" do |tz|
   tz.offset :o0, 27804, 0, :LMT
   tz.offset :o1, 28800, 0, :AWST

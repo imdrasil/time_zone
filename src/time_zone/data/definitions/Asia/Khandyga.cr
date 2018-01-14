@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Khandyga
+#  Khandyga
 TimeZone::Register.timezone "Asia/Khandyga" do |tz|
   tz.offset :o0, 32533, 0, :LMT
   tz.offset :o1, 28800, 0, :"+08"

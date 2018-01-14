@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Oral
+#  Oral
 TimeZone::Register.timezone "Asia/Oral" do |tz|
   tz.offset :o0, 12324, 0, :LMT
   tz.offset :o1, 10800, 0, :"+03"

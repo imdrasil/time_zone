@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Jakarta
+#  Jakarta
 TimeZone::Register.timezone "Asia/Jakarta" do |tz|
   tz.offset :o0, 25632, 0, :LMT
   tz.offset :o1, 25632, 0, :BMT

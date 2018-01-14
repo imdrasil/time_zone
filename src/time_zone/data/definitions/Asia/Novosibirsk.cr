@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Novosibirsk
+#  Novosibirsk
 TimeZone::Register.timezone "Asia/Novosibirsk" do |tz|
   tz.offset :o0, 19900, 0, :LMT
   tz.offset :o1, 21600, 0, :"+06"

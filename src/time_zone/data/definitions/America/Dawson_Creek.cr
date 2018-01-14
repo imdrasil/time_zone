@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Dawson_Creek
+#  Dawson_Creek
 TimeZone::Register.timezone "America/Dawson_Creek" do |tz|
   tz.offset :o0, -28856, 0, :LMT
   tz.offset :o1, -28800, 0, :PST

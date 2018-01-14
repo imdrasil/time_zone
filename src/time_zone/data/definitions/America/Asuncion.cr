@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Asuncion
+#  Asuncion
 TimeZone::Register.timezone "America/Asuncion" do |tz|
   tz.offset :o0, -13840, 0, :LMT
   tz.offset :o1, -13840, 0, :AMT

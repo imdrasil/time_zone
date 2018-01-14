@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Atlantic
-# South_Georgia
+#  South_Georgia
 TimeZone::Register.timezone "Atlantic/South_Georgia" do |tz|
   tz.offset :o0, -8768, 0, :LMT
   tz.offset :o1, -7200, 0, :"-02"

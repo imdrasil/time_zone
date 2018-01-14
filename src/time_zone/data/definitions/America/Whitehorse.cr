@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Whitehorse
+#  Whitehorse
 TimeZone::Register.timezone "America/Whitehorse" do |tz|
   tz.offset :o0, -32412, 0, :LMT
   tz.offset :o1, -32400, 0, :YST

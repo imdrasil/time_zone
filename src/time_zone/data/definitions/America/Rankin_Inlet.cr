@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Rankin_Inlet
+#  Rankin_Inlet
 TimeZone::Register.timezone "America/Rankin_Inlet" do |tz|
   tz.offset :o0, 0, 0, :"-00"
   tz.offset :o1, -21600, 0, :CST

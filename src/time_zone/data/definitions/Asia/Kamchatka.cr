@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Kamchatka
+#  Kamchatka
 TimeZone::Register.timezone "Asia/Kamchatka" do |tz|
   tz.offset :o0, 38076, 0, :LMT
   tz.offset :o1, 39600, 0, :"+11"

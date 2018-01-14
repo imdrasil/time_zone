@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Indiana
-# Tell_City
+#  Indiana
+#   Tell_City
 TimeZone::Register.timezone "America/Indiana/Tell_City" do |tz|
   tz.offset :o0, -20823, 0, :LMT
   tz.offset :o1, -21600, 0, :CST

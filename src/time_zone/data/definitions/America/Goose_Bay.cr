@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Goose_Bay
+#  Goose_Bay
 TimeZone::Register.timezone "America/Goose_Bay" do |tz|
   tz.offset :o0, -14500, 0, :LMT
   tz.offset :o1, -12652, 0, :NST

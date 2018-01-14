@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Choibalsan
+#  Choibalsan
 TimeZone::Register.timezone "Asia/Choibalsan" do |tz|
   tz.offset :o0, 27480, 0, :LMT
   tz.offset :o1, 25200, 0, :"+07"

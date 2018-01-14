@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# St_Johns
+#  St_Johns
 TimeZone::Register.timezone "America/St_Johns" do |tz|
   tz.offset :o0, -12652, 0, :LMT
   tz.offset :o1, -12652, 0, :NST

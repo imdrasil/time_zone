@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Araguaina
+#  Araguaina
 TimeZone::Register.timezone "America/Araguaina" do |tz|
   tz.offset :o0, -11568, 0, :LMT
   tz.offset :o1, -10800, 0, :"-03"

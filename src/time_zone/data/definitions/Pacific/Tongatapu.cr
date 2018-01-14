@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Tongatapu
+#  Tongatapu
 TimeZone::Register.timezone "Pacific/Tongatapu" do |tz|
   tz.offset :o0, 44360, 0, :LMT
   tz.offset :o1, 44400, 0, :"+1220"

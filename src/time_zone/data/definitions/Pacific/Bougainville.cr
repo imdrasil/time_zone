@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Bougainville
+#  Bougainville
 TimeZone::Register.timezone "Pacific/Bougainville" do |tz|
   tz.offset :o0, 37336, 0, :LMT
   tz.offset :o1, 35312, 0, :PMMT

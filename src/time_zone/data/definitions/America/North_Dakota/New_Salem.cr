@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# North_Dakota
-# New_Salem
+#  North_Dakota
+#   New_Salem
 TimeZone::Register.timezone "America/North_Dakota/New_Salem" do |tz|
   tz.offset :o0, -24339, 0, :LMT
   tz.offset :o1, -25200, 0, :MST

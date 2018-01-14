@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Kolkata
+#  Kolkata
 TimeZone::Register.timezone "Asia/Kolkata" do |tz|
   tz.offset :o0, 21208, 0, :LMT
   tz.offset :o1, 21200, 0, :HMT

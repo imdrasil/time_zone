@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Galapagos
+#  Galapagos
 TimeZone::Register.timezone "Pacific/Galapagos" do |tz|
   tz.offset :o0, -21504, 0, :LMT
   tz.offset :o1, -18000, 0, :"-05"

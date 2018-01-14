@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Monterrey
+#  Monterrey
 TimeZone::Register.timezone "America/Monterrey" do |tz|
   tz.offset :o0, -24076, 0, :LMT
   tz.offset :o1, -21600, 0, :CST

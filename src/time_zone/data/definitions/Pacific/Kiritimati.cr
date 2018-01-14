@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Kiritimati
+#  Kiritimati
 TimeZone::Register.timezone "Pacific/Kiritimati" do |tz|
   tz.offset :o0, -37760, 0, :LMT
   tz.offset :o1, -38400, 0, :"-1040"

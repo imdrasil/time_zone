@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Copenhagen
+#  Copenhagen
 TimeZone::Register.timezone "Europe/Copenhagen" do |tz|
   tz.offset :o0, 3020, 0, :LMT
   tz.offset :o1, 3020, 0, :CMT

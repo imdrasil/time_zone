@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Kuala_Lumpur
+#  Kuala_Lumpur
 TimeZone::Register.timezone "Asia/Kuala_Lumpur" do |tz|
   tz.offset :o0, 24406, 0, :LMT
   tz.offset :o1, 24925, 0, :SMT

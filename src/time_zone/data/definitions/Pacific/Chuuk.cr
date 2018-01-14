@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Chuuk
+#  Chuuk
 TimeZone::Register.timezone "Pacific/Chuuk" do |tz|
   tz.offset :o0, 36428, 0, :LMT
   tz.offset :o1, 36000, 0, :"+10"

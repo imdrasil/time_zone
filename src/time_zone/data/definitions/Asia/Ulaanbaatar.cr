@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Ulaanbaatar
+#  Ulaanbaatar
 TimeZone::Register.timezone "Asia/Ulaanbaatar" do |tz|
   tz.offset :o0, 25652, 0, :LMT
   tz.offset :o1, 25200, 0, :"+07"

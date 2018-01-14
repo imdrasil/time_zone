@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Aqtau
+#  Aqtau
 TimeZone::Register.timezone "Asia/Aqtau" do |tz|
   tz.offset :o0, 12064, 0, :LMT
   tz.offset :o1, 14400, 0, :"+04"

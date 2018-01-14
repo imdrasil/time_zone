@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Dawson
+#  Dawson
 TimeZone::Register.timezone "America/Dawson" do |tz|
   tz.offset :o0, -33460, 0, :LMT
   tz.offset :o1, -32400, 0, :YST

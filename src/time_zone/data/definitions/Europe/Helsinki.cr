@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Helsinki
+#  Helsinki
 TimeZone::Register.timezone "Europe/Helsinki" do |tz|
   tz.offset :o0, 5989, 0, :LMT
   tz.offset :o1, 5989, 0, :HMT

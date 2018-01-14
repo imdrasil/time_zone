@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Kentucky
-# Monticello
+#  Kentucky
+#   Monticello
 TimeZone::Register.timezone "America/Kentucky/Monticello" do |tz|
   tz.offset :o0, -20364, 0, :LMT
   tz.offset :o1, -21600, 0, :CST

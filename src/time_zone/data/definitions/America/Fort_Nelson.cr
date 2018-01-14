@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Fort_Nelson
+#  Fort_Nelson
 TimeZone::Register.timezone "America/Fort_Nelson" do |tz|
   tz.offset :o0, -29447, 0, :LMT
   tz.offset :o1, -28800, 0, :PST

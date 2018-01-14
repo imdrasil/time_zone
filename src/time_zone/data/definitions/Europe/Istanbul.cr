@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Istanbul
+#  Istanbul
 TimeZone::Register.timezone "Europe/Istanbul" do |tz|
   tz.offset :o0, 6952, 0, :LMT
   tz.offset :o1, 7016, 0, :IMT

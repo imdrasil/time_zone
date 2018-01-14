@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Magadan
+#  Magadan
 TimeZone::Register.timezone "Asia/Magadan" do |tz|
   tz.offset :o0, 36192, 0, :LMT
   tz.offset :o1, 36000, 0, :"+10"

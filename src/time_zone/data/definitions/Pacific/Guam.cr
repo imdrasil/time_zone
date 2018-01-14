@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Guam
+#  Guam
 TimeZone::Register.timezone "Pacific/Guam" do |tz|
   tz.offset :o0, -51660, 0, :LMT
   tz.offset :o1, 34740, 0, :LMT

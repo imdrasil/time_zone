@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# Tunis
+#  Tunis
 TimeZone::Register.timezone "Africa/Tunis" do |tz|
   tz.offset :o0, 2444, 0, :LMT
   tz.offset :o1, 561, 0, :PMT

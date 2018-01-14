@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Kathmandu
+#  Kathmandu
 TimeZone::Register.timezone "Asia/Kathmandu" do |tz|
   tz.offset :o0, 20476, 0, :LMT
   tz.offset :o1, 19800, 0, :"+0530"

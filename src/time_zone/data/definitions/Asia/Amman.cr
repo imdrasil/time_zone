@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Amman
+#  Amman
 TimeZone::Register.timezone "Asia/Amman" do |tz|
   tz.offset :o0, 8624, 0, :LMT
   tz.offset :o1, 7200, 0, :EET

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# El_Salvador
+#  El_Salvador
 TimeZone::Register.timezone "America/El_Salvador" do |tz|
   tz.offset :o0, -21408, 0, :LMT
   tz.offset :o1, -21600, 0, :CST

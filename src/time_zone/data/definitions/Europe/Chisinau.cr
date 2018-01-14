@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Chisinau
+#  Chisinau
 TimeZone::Register.timezone "Europe/Chisinau" do |tz|
   tz.offset :o0, 6920, 0, :LMT
   tz.offset :o1, 6900, 0, :CMT

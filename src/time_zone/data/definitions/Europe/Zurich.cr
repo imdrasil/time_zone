@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Zurich
+#  Zurich
 TimeZone::Register.timezone "Europe/Zurich" do |tz|
   tz.offset :o0, 2048, 0, :LMT
   tz.offset :o1, 1786, 0, :BMT

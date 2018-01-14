@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Caracas
+#  Caracas
 TimeZone::Register.timezone "America/Caracas" do |tz|
   tz.offset :o0, -16064, 0, :LMT
   tz.offset :o1, -16060, 0, :CMT

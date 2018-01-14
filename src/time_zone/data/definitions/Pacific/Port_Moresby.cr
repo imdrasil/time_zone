@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Port_Moresby
+#  Port_Moresby
 TimeZone::Register.timezone "Pacific/Port_Moresby" do |tz|
   tz.offset :o0, 35320, 0, :LMT
   tz.offset :o1, 35312, 0, :PMMT

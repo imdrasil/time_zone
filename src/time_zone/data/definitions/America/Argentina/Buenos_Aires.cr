@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Argentina
-# Buenos_Aires
+#  Argentina
+#   Buenos_Aires
 TimeZone::Register.timezone "America/Argentina/Buenos_Aires" do |tz|
   tz.offset :o0, -14028, 0, :LMT
   tz.offset :o1, -15408, 0, :CMT

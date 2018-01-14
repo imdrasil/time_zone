@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Santo_Domingo
+#  Santo_Domingo
 TimeZone::Register.timezone "America/Santo_Domingo" do |tz|
   tz.offset :o0, -16776, 0, :LMT
   tz.offset :o1, -16800, 0, :SDMT

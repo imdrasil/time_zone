@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Indiana
-# Indianapolis
+#  Indiana
+#   Indianapolis
 TimeZone::Register.timezone "America/Indiana/Indianapolis" do |tz|
   tz.offset :o0, -20678, 0, :LMT
   tz.offset :o1, -21600, 0, :CST

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Sakhalin
+#  Sakhalin
 TimeZone::Register.timezone "Asia/Sakhalin" do |tz|
   tz.offset :o0, 34248, 0, :LMT
   tz.offset :o1, 32400, 0, :"+09"

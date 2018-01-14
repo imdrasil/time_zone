@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Jerusalem
+#  Jerusalem
 TimeZone::Register.timezone "Asia/Jerusalem" do |tz|
   tz.offset :o0, 8454, 0, :LMT
   tz.offset :o1, 8440, 0, :JMT

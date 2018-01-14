@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Vladivostok
+#  Vladivostok
 TimeZone::Register.timezone "Asia/Vladivostok" do |tz|
   tz.offset :o0, 31651, 0, :LMT
   tz.offset :o1, 32400, 0, :"+09"

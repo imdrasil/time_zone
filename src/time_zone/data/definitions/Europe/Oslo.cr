@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Oslo
+#  Oslo
 TimeZone::Register.timezone "Europe/Oslo" do |tz|
   tz.offset :o0, 2580, 0, :LMT
   tz.offset :o1, 3600, 0, :CET

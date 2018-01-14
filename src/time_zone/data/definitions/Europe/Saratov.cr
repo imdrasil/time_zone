@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Saratov
+#  Saratov
 TimeZone::Register.timezone "Europe/Saratov" do |tz|
   tz.offset :o0, 11058, 0, :LMT
   tz.offset :o1, 10800, 0, :"+03"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Panama
+#  Panama
 TimeZone::Register.timezone "America/Panama" do |tz|
   tz.offset :o0, -19088, 0, :LMT
   tz.offset :o1, -19176, 0, :CMT

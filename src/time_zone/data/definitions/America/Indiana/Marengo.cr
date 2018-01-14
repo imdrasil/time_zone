@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Indiana
-# Marengo
+#  Indiana
+#   Marengo
 TimeZone::Register.timezone "America/Indiana/Marengo" do |tz|
   tz.offset :o0, -20723, 0, :LMT
   tz.offset :o1, -21600, 0, :CST

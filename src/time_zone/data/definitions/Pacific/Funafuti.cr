@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Funafuti
+#  Funafuti
 TimeZone::Register.timezone "Pacific/Funafuti" do |tz|
   tz.offset :o0, 43012, 0, :LMT
   tz.offset :o1, 43200, 0, :"+12"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Tallinn
+#  Tallinn
 TimeZone::Register.timezone "Europe/Tallinn" do |tz|
   tz.offset :o0, 5940, 0, :LMT
   tz.offset :o1, 5940, 0, :TMT

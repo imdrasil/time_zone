@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# Monrovia
+#  Monrovia
 TimeZone::Register.timezone "Africa/Monrovia" do |tz|
   tz.offset :o0, -2588, 0, :LMT
   tz.offset :o1, -2588, 0, :MMT

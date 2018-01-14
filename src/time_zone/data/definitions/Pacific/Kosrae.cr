@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Kosrae
+#  Kosrae
 TimeZone::Register.timezone "Pacific/Kosrae" do |tz|
   tz.offset :o0, 39116, 0, :LMT
   tz.offset :o1, 39600, 0, :"+11"

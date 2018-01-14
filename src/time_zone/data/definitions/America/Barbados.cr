@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Barbados
+#  Barbados
 TimeZone::Register.timezone "America/Barbados" do |tz|
   tz.offset :o0, -14309, 0, :LMT
   tz.offset :o1, -14309, 0, :BMT

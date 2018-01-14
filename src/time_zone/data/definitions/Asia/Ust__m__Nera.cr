@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Ust__m__Nera
+#  Ust__m__Nera
 TimeZone::Register.timezone "Asia/Ust-Nera" do |tz|
   tz.offset :o0, 34374, 0, :LMT
   tz.offset :o1, 28800, 0, :"+08"

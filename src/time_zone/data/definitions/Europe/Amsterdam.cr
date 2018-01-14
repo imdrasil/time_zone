@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Amsterdam
+#  Amsterdam
 TimeZone::Register.timezone "Europe/Amsterdam" do |tz|
   tz.offset :o0, 1172, 0, :LMT
   tz.offset :o1, 1172, 0, :AMT

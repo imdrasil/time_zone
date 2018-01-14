@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Athens
+#  Athens
 TimeZone::Register.timezone "Europe/Athens" do |tz|
   tz.offset :o0, 5692, 0, :LMT
   tz.offset :o1, 5692, 0, :AMT

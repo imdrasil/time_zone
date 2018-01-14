@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Norfolk
+#  Norfolk
 TimeZone::Register.timezone "Pacific/Norfolk" do |tz|
   tz.offset :o0, 40312, 0, :LMT
   tz.offset :o1, 40320, 0, :"+1112"

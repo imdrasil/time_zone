@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# Accra
+#  Accra
 TimeZone::Register.timezone "Africa/Accra" do |tz|
   tz.offset :o0, -52, 0, :LMT
   tz.offset :o1, 0, 0, :GMT

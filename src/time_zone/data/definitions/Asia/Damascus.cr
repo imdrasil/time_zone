@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Damascus
+#  Damascus
 TimeZone::Register.timezone "Asia/Damascus" do |tz|
   tz.offset :o0, 8712, 0, :LMT
   tz.offset :o1, 7200, 0, :EET

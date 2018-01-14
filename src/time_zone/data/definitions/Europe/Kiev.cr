@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Kiev
+#  Kiev
 TimeZone::Register.timezone "Europe/Kiev" do |tz|
   tz.offset :o0, 7324, 0, :LMT
   tz.offset :o1, 7324, 0, :KMT

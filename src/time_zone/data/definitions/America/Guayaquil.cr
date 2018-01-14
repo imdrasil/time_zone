@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Guayaquil
+#  Guayaquil
 TimeZone::Register.timezone "America/Guayaquil" do |tz|
   tz.offset :o0, -19160, 0, :LMT
   tz.offset :o1, -18840, 0, :QMT

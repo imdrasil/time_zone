@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Montevideo
+#  Montevideo
 TimeZone::Register.timezone "America/Montevideo" do |tz|
   tz.offset :o0, -13484, 0, :LMT
   tz.offset :o1, -13484, 0, :MMT

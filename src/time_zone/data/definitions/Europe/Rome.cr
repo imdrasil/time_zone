@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Rome
+#  Rome
 TimeZone::Register.timezone "Europe/Rome" do |tz|
   tz.offset :o0, 2996, 0, :LMT
   tz.offset :o1, 2996, 0, :RMT

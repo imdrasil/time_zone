@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Argentina
-# Jujuy
+#  Argentina
+#   Jujuy
 TimeZone::Register.timezone "America/Argentina/Jujuy" do |tz|
   tz.offset :o0, -15672, 0, :LMT
   tz.offset :o1, -15408, 0, :CMT

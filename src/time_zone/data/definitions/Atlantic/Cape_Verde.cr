@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Atlantic
-# Cape_Verde
+#  Cape_Verde
 TimeZone::Register.timezone "Atlantic/Cape_Verde" do |tz|
   tz.offset :o0, -5644, 0, :LMT
   tz.offset :o1, -7200, 0, :"-02"

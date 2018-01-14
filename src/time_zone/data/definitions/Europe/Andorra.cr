@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Andorra
+#  Andorra
 TimeZone::Register.timezone "Europe/Andorra" do |tz|
   tz.offset :o0, 364, 0, :LMT
   tz.offset :o1, 0, 0, :WET

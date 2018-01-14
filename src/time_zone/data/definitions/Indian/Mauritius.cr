@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Indian
-# Mauritius
+#  Mauritius
 TimeZone::Register.timezone "Indian/Mauritius" do |tz|
   tz.offset :o0, 13800, 0, :LMT
   tz.offset :o1, 14400, 0, :"+04"

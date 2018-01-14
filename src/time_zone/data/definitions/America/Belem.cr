@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Belem
+#  Belem
 TimeZone::Register.timezone "America/Belem" do |tz|
   tz.offset :o0, -11636, 0, :LMT
   tz.offset :o1, -10800, 0, :"-03"

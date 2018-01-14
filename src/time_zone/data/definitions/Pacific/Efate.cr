@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Efate
+#  Efate
 TimeZone::Register.timezone "Pacific/Efate" do |tz|
   tz.offset :o0, 40396, 0, :LMT
   tz.offset :o1, 39600, 0, :"+11"

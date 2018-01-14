@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Hermosillo
+#  Hermosillo
 TimeZone::Register.timezone "America/Hermosillo" do |tz|
   tz.offset :o0, -26632, 0, :LMT
   tz.offset :o1, -25200, 0, :MST

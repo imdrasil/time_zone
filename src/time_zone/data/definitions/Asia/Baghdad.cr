@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Baghdad
+#  Baghdad
 TimeZone::Register.timezone "Asia/Baghdad" do |tz|
   tz.offset :o0, 10660, 0, :LMT
   tz.offset :o1, 10656, 0, :BMT

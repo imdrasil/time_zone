@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Thimphu
+#  Thimphu
 TimeZone::Register.timezone "Asia/Thimphu" do |tz|
   tz.offset :o0, 21516, 0, :LMT
   tz.offset :o1, 19800, 0, :"+0530"

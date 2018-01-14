@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Jamaica
+#  Jamaica
 TimeZone::Register.timezone "America/Jamaica" do |tz|
   tz.offset :o0, -18431, 0, :LMT
   tz.offset :o1, -18431, 0, :KMT

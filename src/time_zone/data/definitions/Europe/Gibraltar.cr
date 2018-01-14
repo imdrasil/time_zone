@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Gibraltar
+#  Gibraltar
 TimeZone::Register.timezone "Europe/Gibraltar" do |tz|
   tz.offset :o0, -1284, 0, :LMT
   tz.offset :o1, 0, 0, :GMT

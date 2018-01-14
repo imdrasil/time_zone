@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Adak
+#  Adak
 TimeZone::Register.timezone "America/Adak" do |tz|
   tz.offset :o0, 44002, 0, :LMT
   tz.offset :o1, -42398, 0, :LMT

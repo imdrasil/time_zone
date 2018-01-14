@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Easter
+#  Easter
 TimeZone::Register.timezone "Pacific/Easter" do |tz|
   tz.offset :o0, -26248, 0, :LMT
   tz.offset :o1, -26248, 0, :EMT

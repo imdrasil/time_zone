@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Argentina
-# Mendoza
+#  Argentina
+#   Mendoza
 TimeZone::Register.timezone "America/Argentina/Mendoza" do |tz|
   tz.offset :o0, -16516, 0, :LMT
   tz.offset :o1, -15408, 0, :CMT

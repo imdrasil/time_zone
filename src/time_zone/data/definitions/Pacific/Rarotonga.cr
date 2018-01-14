@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Rarotonga
+#  Rarotonga
 TimeZone::Register.timezone "Pacific/Rarotonga" do |tz|
   tz.offset :o0, -38344, 0, :LMT
   tz.offset :o1, -37800, 0, :"-1030"

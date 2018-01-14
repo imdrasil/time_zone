@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Tijuana
+#  Tijuana
 TimeZone::Register.timezone "America/Tijuana" do |tz|
   tz.offset :o0, -28084, 0, :LMT
   tz.offset :o1, -25200, 0, :MST

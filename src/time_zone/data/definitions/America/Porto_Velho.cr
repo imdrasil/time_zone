@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Porto_Velho
+#  Porto_Velho
 TimeZone::Register.timezone "America/Porto_Velho" do |tz|
   tz.offset :o0, -15336, 0, :LMT
   tz.offset :o1, -14400, 0, :"-04"

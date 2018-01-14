@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Simferopol
+#  Simferopol
 TimeZone::Register.timezone "Europe/Simferopol" do |tz|
   tz.offset :o0, 8184, 0, :LMT
   tz.offset :o1, 8160, 0, :SMT

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Anadyr
+#  Anadyr
 TimeZone::Register.timezone "Asia/Anadyr" do |tz|
   tz.offset :o0, 42596, 0, :LMT
   tz.offset :o1, 43200, 0, :"+12"

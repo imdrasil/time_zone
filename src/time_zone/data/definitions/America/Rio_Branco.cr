@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Rio_Branco
+#  Rio_Branco
 TimeZone::Register.timezone "America/Rio_Branco" do |tz|
   tz.offset :o0, -16272, 0, :LMT
   tz.offset :o1, -18000, 0, :"-05"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Jayapura
+#  Jayapura
 TimeZone::Register.timezone "Asia/Jayapura" do |tz|
   tz.offset :o0, 33768, 0, :LMT
   tz.offset :o1, 32400, 0, :"+09"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# El_Aaiun
+#  El_Aaiun
 TimeZone::Register.timezone "Africa/El_Aaiun" do |tz|
   tz.offset :o0, -3168, 0, :LMT
   tz.offset :o1, -3600, 0, :"-01"

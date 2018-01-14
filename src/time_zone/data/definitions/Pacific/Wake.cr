@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Wake
+#  Wake
 TimeZone::Register.timezone "Pacific/Wake" do |tz|
   tz.offset :o0, 39988, 0, :LMT
   tz.offset :o1, 43200, 0, :"+12"

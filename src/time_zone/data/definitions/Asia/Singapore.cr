@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Singapore
+#  Singapore
 TimeZone::Register.timezone "Asia/Singapore" do |tz|
   tz.offset :o0, 24925, 0, :LMT
   tz.offset :o1, 24925, 0, :SMT

@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Argentina
-# San_Luis
+#  Argentina
+#   San_Luis
 TimeZone::Register.timezone "America/Argentina/San_Luis" do |tz|
   tz.offset :o0, -15924, 0, :LMT
   tz.offset :o1, -15408, 0, :CMT

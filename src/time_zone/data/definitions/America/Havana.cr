@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Havana
+#  Havana
 TimeZone::Register.timezone "America/Havana" do |tz|
   tz.offset :o0, -19768, 0, :LMT
   tz.offset :o1, -19776, 0, :HMT

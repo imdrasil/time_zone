@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Antarctica
-# Casey
+#  Casey
 TimeZone::Register.timezone "Antarctica/Casey" do |tz|
   tz.offset :o0, 0, 0, :"-00"
   tz.offset :o1, 28800, 0, :"+08"

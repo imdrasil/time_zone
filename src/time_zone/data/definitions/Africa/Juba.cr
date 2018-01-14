@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# Juba
+#  Juba
 TimeZone::Register.timezone "Africa/Juba" do |tz|
   tz.offset :o0, 7588, 0, :LMT
   tz.offset :o1, 7200, 0, :CAT

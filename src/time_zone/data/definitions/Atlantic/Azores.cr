@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Atlantic
-# Azores
+#  Azores
 TimeZone::Register.timezone "Atlantic/Azores" do |tz|
   tz.offset :o0, -6160, 0, :LMT
   tz.offset :o1, -6872, 0, :HMT

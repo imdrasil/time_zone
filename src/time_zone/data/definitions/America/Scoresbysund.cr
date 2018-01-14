@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Scoresbysund
+#  Scoresbysund
 TimeZone::Register.timezone "America/Scoresbysund" do |tz|
   tz.offset :o0, -5272, 0, :LMT
   tz.offset :o1, -7200, 0, :"-02"

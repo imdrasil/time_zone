@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Nauru
+#  Nauru
 TimeZone::Register.timezone "Pacific/Nauru" do |tz|
   tz.offset :o0, 40060, 0, :LMT
   tz.offset :o1, 41400, 0, :"+1130"

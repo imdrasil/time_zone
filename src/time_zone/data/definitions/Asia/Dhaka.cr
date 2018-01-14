@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Dhaka
+#  Dhaka
 TimeZone::Register.timezone "Asia/Dhaka" do |tz|
   tz.offset :o0, 21700, 0, :LMT
   tz.offset :o1, 21200, 0, :HMT

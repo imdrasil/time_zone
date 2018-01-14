@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Vilnius
+#  Vilnius
 TimeZone::Register.timezone "Europe/Vilnius" do |tz|
   tz.offset :o0, 6076, 0, :LMT
   tz.offset :o1, 5040, 0, :WMT

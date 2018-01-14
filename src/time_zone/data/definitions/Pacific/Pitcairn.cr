@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Pitcairn
+#  Pitcairn
 TimeZone::Register.timezone "Pacific/Pitcairn" do |tz|
   tz.offset :o0, -31220, 0, :LMT
   tz.offset :o1, -30600, 0, :"-0830"

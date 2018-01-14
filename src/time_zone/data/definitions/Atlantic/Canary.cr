@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Atlantic
-# Canary
+#  Canary
 TimeZone::Register.timezone "Atlantic/Canary" do |tz|
   tz.offset :o0, -3696, 0, :LMT
   tz.offset :o1, -3600, 0, :"-01"

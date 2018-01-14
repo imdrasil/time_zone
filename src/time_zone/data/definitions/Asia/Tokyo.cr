@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Tokyo
+#  Tokyo
 TimeZone::Register.timezone "Asia/Tokyo" do |tz|
   tz.offset :o0, 33539, 0, :LMT
   tz.offset :o1, 32400, 0, :JST

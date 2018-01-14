@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Seoul
+#  Seoul
 TimeZone::Register.timezone "Asia/Seoul" do |tz|
   tz.offset :o0, 30472, 0, :LMT
   tz.offset :o1, 30600, 0, :KST

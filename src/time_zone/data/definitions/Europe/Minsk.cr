@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Minsk
+#  Minsk
 TimeZone::Register.timezone "Europe/Minsk" do |tz|
   tz.offset :o0, 6616, 0, :LMT
   tz.offset :o1, 6600, 0, :MMT

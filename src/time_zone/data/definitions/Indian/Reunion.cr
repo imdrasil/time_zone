@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Indian
-# Reunion
+#  Reunion
 TimeZone::Register.timezone "Indian/Reunion" do |tz|
   tz.offset :o0, 13312, 0, :LMT
   tz.offset :o1, 14400, 0, :"+04"

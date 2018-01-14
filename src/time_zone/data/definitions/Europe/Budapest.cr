@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Budapest
+#  Budapest
 TimeZone::Register.timezone "Europe/Budapest" do |tz|
   tz.offset :o0, 4580, 0, :LMT
   tz.offset :o1, 3600, 0, :CET

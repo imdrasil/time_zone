@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Hong_Kong
+#  Hong_Kong
 TimeZone::Register.timezone "Asia/Hong_Kong" do |tz|
   tz.offset :o0, 27402, 0, :LMT
   tz.offset :o1, 28800, 0, :HKT

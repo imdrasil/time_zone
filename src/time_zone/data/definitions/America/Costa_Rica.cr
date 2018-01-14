@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Costa_Rica
+#  Costa_Rica
 TimeZone::Register.timezone "America/Costa_Rica" do |tz|
   tz.offset :o0, -20173, 0, :LMT
   tz.offset :o1, -20173, 0, :SJMT

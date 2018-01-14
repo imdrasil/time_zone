@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Bahia
+#  Bahia
 TimeZone::Register.timezone "America/Bahia" do |tz|
   tz.offset :o0, -9244, 0, :LMT
   tz.offset :o1, -10800, 0, :"-03"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Brunei
+#  Brunei
 TimeZone::Register.timezone "Asia/Brunei" do |tz|
   tz.offset :o0, 27580, 0, :LMT
   tz.offset :o1, 27000, 0, :"+0730"

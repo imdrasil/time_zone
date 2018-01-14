@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Pago_Pago
+#  Pago_Pago
 TimeZone::Register.timezone "Pacific/Pago_Pago" do |tz|
   tz.offset :o0, 45432, 0, :LMT
   tz.offset :o1, -40968, 0, :LMT

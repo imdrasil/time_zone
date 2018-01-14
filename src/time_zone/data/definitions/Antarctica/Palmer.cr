@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Antarctica
-# Palmer
+#  Palmer
 TimeZone::Register.timezone "Antarctica/Palmer" do |tz|
   tz.offset :o0, 0, 0, :"-00"
   tz.offset :o1, -14400, 3600, :"-03"

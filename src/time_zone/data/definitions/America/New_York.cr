@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# New_York
+#  New_York
 TimeZone::Register.timezone "America/New_York" do |tz|
   tz.offset :o0, -17762, 0, :LMT
   tz.offset :o1, -18000, 0, :EST

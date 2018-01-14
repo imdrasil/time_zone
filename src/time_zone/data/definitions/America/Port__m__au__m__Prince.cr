@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Port__m__au__m__Prince
+#  Port__m__au__m__Prince
 TimeZone::Register.timezone "America/Port-au-Prince" do |tz|
   tz.offset :o0, -17360, 0, :LMT
   tz.offset :o1, -17340, 0, :PPMT

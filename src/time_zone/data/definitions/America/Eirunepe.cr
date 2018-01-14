@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Eirunepe
+#  Eirunepe
 TimeZone::Register.timezone "America/Eirunepe" do |tz|
   tz.offset :o0, -16768, 0, :LMT
   tz.offset :o1, -18000, 0, :"-05"

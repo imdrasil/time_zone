@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Yekaterinburg
+#  Yekaterinburg
 TimeZone::Register.timezone "Asia/Yekaterinburg" do |tz|
   tz.offset :o0, 14553, 0, :LMT
   tz.offset :o1, 13505, 0, :PMT

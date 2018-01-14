@@ -54,5 +54,5 @@ when "build_tz_module"
 when "build_countries"
   build_countries
 else
-  raise "Unknown command"
+  raise "Unknown command, available ones are: 'build_tz_modules', 'build_tz_module', 'build_countries'"
 end

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Maceio
+#  Maceio
 TimeZone::Register.timezone "America/Maceio" do |tz|
   tz.offset :o0, -8572, 0, :LMT
   tz.offset :o1, -10800, 0, :"-03"

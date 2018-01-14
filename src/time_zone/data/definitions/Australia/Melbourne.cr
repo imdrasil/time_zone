@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Australia
-# Melbourne
+#  Melbourne
 TimeZone::Register.timezone "Australia/Melbourne" do |tz|
   tz.offset :o0, 34792, 0, :LMT
   tz.offset :o1, 36000, 0, :AEST

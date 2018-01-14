@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Thunder_Bay
+#  Thunder_Bay
 TimeZone::Register.timezone "America/Thunder_Bay" do |tz|
   tz.offset :o0, -21420, 0, :LMT
   tz.offset :o1, -21600, 0, :CST

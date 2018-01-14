@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Paris
+#  Paris
 TimeZone::Register.timezone "Europe/Paris" do |tz|
   tz.offset :o0, 561, 0, :LMT
   tz.offset :o1, 561, 0, :PMT

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Bucharest
+#  Bucharest
 TimeZone::Register.timezone "Europe/Bucharest" do |tz|
   tz.offset :o0, 6264, 0, :LMT
   tz.offset :o1, 6264, 0, :BMT

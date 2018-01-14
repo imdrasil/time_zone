@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# London
+#  London
 TimeZone::Register.timezone "Europe/London" do |tz|
   tz.offset :o0, -75, 0, :LMT
   tz.offset :o1, 0, 0, :GMT

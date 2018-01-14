@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Fakaofo
+#  Fakaofo
 TimeZone::Register.timezone "Pacific/Fakaofo" do |tz|
   tz.offset :o0, -41096, 0, :LMT
   tz.offset :o1, -39600, 0, :"-11"

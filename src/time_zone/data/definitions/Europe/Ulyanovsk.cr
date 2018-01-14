@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Ulyanovsk
+#  Ulyanovsk
 TimeZone::Register.timezone "Europe/Ulyanovsk" do |tz|
   tz.offset :o0, 11616, 0, :LMT
   tz.offset :o1, 10800, 0, :"+03"

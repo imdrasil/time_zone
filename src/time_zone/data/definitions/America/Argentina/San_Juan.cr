@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Argentina
-# San_Juan
+#  Argentina
+#   San_Juan
 TimeZone::Register.timezone "America/Argentina/San_Juan" do |tz|
   tz.offset :o0, -16444, 0, :LMT
   tz.offset :o1, -15408, 0, :CMT

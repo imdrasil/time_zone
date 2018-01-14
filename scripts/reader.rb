@@ -582,14 +582,12 @@ module TZInfo
             super("#{' ' * @tz_indent}#{s}")
           end
 
-          file.puts('# encoding: UTF-8')
-          file.puts('')
           file.puts('# This file contains data derived from the IANA Time Zone Database')
           file.puts('# (http://www.iana.org/time-zones).')
           file.puts('')               
           
-          @name_elements.each do |part| 
-            file.puts("# #{part}")
+          @name_elements.each_with_index do |part, pad| 
+            file.puts("##{" " * (pad + 1)}#{part}")
           end
           
           yield file

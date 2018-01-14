@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Niue
+#  Niue
 TimeZone::Register.timezone "Pacific/Niue" do |tz|
   tz.offset :o0, -40780, 0, :LMT
   tz.offset :o1, -40800, 0, :"-1120"

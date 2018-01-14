@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Indiana
-# Vincennes
+#  Indiana
+#   Vincennes
 TimeZone::Register.timezone "America/Indiana/Vincennes" do |tz|
   tz.offset :o0, -21007, 0, :LMT
   tz.offset :o1, -21600, 0, :CST

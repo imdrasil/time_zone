@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Managua
+#  Managua
 TimeZone::Register.timezone "America/Managua" do |tz|
   tz.offset :o0, -20708, 0, :LMT
   tz.offset :o1, -20712, 0, :MMT

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Australia
-# Adelaide
+#  Adelaide
 TimeZone::Register.timezone "Australia/Adelaide" do |tz|
   tz.offset :o0, 33260, 0, :LMT
   tz.offset :o1, 32400, 0, :ACST

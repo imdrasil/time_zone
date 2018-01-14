@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Mexico_City
+#  Mexico_City
 TimeZone::Register.timezone "America/Mexico_City" do |tz|
   tz.offset :o0, -23796, 0, :LMT
   tz.offset :o1, -25200, 0, :MST

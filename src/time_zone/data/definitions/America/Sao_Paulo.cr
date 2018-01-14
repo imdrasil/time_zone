@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Sao_Paulo
+#  Sao_Paulo
 TimeZone::Register.timezone "America/Sao_Paulo" do |tz|
   tz.offset :o0, -11188, 0, :LMT
   tz.offset :o1, -10800, 0, :"-03"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Prague
+#  Prague
 TimeZone::Register.timezone "Europe/Prague" do |tz|
   tz.offset :o0, 3464, 0, :LMT
   tz.offset :o1, 3464, 0, :PMT

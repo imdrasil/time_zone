@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Auckland
+#  Auckland
 TimeZone::Register.timezone "Pacific/Auckland" do |tz|
   tz.offset :o0, 41944, 0, :LMT
   tz.offset :o1, 41400, 0, :NZMT

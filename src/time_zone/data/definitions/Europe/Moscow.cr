@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Moscow
+#  Moscow
 TimeZone::Register.timezone "Europe/Moscow" do |tz|
   tz.offset :o0, 9017, 0, :LMT
   tz.offset :o1, 9017, 0, :MMT

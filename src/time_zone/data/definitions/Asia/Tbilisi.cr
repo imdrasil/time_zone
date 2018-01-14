@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Tbilisi
+#  Tbilisi
 TimeZone::Register.timezone "Asia/Tbilisi" do |tz|
   tz.offset :o0, 10751, 0, :LMT
   tz.offset :o1, 10751, 0, :TBMT

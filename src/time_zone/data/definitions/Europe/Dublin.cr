@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Dublin
+#  Dublin
 TimeZone::Register.timezone "Europe/Dublin" do |tz|
   tz.offset :o0, -1500, 0, :LMT
   tz.offset :o1, -1521, 0, :DMT

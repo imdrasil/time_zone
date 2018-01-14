@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Zaporozhye
+#  Zaporozhye
 TimeZone::Register.timezone "Europe/Zaporozhye" do |tz|
   tz.offset :o0, 8440, 0, :LMT
   tz.offset :o1, 8400, 0, :"+0220"

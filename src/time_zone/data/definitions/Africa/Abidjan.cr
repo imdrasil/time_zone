@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# Abidjan
+#  Abidjan
 TimeZone::Register.timezone "Africa/Abidjan" do |tz|
   tz.offset :o0, -968, 0, :LMT
   tz.offset :o1, 0, 0, :GMT

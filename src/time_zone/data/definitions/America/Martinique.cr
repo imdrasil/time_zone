@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Martinique
+#  Martinique
 TimeZone::Register.timezone "America/Martinique" do |tz|
   tz.offset :o0, -14660, 0, :LMT
   tz.offset :o1, -14660, 0, :FFMT

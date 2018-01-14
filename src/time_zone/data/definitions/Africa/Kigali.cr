@@ -1,8 +1,6 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Africa
-# Kigali
+#  Kigali
 TimeZone::Register.linked_timezone "Africa/Kigali", "Africa/Maputo"

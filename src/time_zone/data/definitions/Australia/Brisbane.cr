@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Australia
-# Brisbane
+#  Brisbane
 TimeZone::Register.timezone "Australia/Brisbane" do |tz|
   tz.offset :o0, 36728, 0, :LMT
   tz.offset :o1, 36000, 0, :AEST

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Atlantic
-# Madeira
+#  Madeira
 TimeZone::Register.timezone "Atlantic/Madeira" do |tz|
   tz.offset :o0, -4056, 0, :LMT
   tz.offset :o1, -4056, 0, :FMT

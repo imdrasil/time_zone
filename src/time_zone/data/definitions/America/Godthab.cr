@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Godthab
+#  Godthab
 TimeZone::Register.timezone "America/Godthab" do |tz|
   tz.offset :o0, -12416, 0, :LMT
   tz.offset :o1, -10800, 0, :"-03"

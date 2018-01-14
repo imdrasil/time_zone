@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Australia
-# Eucla
+#  Eucla
 TimeZone::Register.timezone "Australia/Eucla" do |tz|
   tz.offset :o0, 30928, 0, :LMT
   tz.offset :o1, 31500, 0, :"+0845"

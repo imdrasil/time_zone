@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Atyrau
+#  Atyrau
 TimeZone::Register.timezone "Asia/Atyrau" do |tz|
   tz.offset :o0, 12464, 0, :LMT
   tz.offset :o1, 10800, 0, :"+03"

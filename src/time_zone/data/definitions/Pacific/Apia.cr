@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Apia
+#  Apia
 TimeZone::Register.timezone "Pacific/Apia" do |tz|
   tz.offset :o0, 45184, 0, :LMT
   tz.offset :o1, -41216, 0, :LMT

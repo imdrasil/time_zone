@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Bogota
+#  Bogota
 TimeZone::Register.timezone "America/Bogota" do |tz|
   tz.offset :o0, -17776, 0, :LMT
   tz.offset :o1, -17776, 0, :BMT

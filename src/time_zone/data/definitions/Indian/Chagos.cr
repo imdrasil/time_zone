@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Indian
-# Chagos
+#  Chagos
 TimeZone::Register.timezone "Indian/Chagos" do |tz|
   tz.offset :o0, 17380, 0, :LMT
   tz.offset :o1, 18000, 0, :"+05"

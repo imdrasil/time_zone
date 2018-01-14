@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Blanc__m__Sablon
+#  Blanc__m__Sablon
 TimeZone::Register.timezone "America/Blanc-Sablon" do |tz|
   tz.offset :o0, -13708, 0, :LMT
   tz.offset :o1, -14400, 0, :AST

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Colombo
+#  Colombo
 TimeZone::Register.timezone "Asia/Colombo" do |tz|
   tz.offset :o0, 19164, 0, :LMT
   tz.offset :o1, 19172, 0, :MMT

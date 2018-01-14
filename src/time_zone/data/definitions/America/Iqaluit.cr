@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Iqaluit
+#  Iqaluit
 TimeZone::Register.timezone "America/Iqaluit" do |tz|
   tz.offset :o0, 0, 0, :"-00"
   tz.offset :o1, -18000, 3600, :EWT

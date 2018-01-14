@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Qyzylorda
+#  Qyzylorda
 TimeZone::Register.timezone "Asia/Qyzylorda" do |tz|
   tz.offset :o0, 15712, 0, :LMT
   tz.offset :o1, 14400, 0, :"+04"

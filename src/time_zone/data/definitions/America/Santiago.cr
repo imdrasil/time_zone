@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Santiago
+#  Santiago
 TimeZone::Register.timezone "America/Santiago" do |tz|
   tz.offset :o0, -16966, 0, :LMT
   tz.offset :o1, -16966, 0, :SMT

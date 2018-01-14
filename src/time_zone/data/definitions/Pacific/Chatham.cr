@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Pacific
-# Chatham
+#  Chatham
 TimeZone::Register.timezone "Pacific/Chatham" do |tz|
   tz.offset :o0, 44028, 0, :LMT
   tz.offset :o1, 44100, 0, :"+1215"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Sofia
+#  Sofia
 TimeZone::Register.timezone "Europe/Sofia" do |tz|
   tz.offset :o0, 5596, 0, :LMT
   tz.offset :o1, 7016, 0, :IMT

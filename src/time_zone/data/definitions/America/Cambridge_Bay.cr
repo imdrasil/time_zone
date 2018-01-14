@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Cambridge_Bay
+#  Cambridge_Bay
 TimeZone::Register.timezone "America/Cambridge_Bay" do |tz|
   tz.offset :o0, 0, 0, :"-00"
   tz.offset :o1, -25200, 0, :MST

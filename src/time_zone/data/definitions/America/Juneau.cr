@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Juneau
+#  Juneau
 TimeZone::Register.timezone "America/Juneau" do |tz|
   tz.offset :o0, 54139, 0, :LMT
   tz.offset :o1, -32261, 0, :LMT

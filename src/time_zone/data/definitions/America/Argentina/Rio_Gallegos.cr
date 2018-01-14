@@ -1,11 +1,9 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Argentina
-# Rio_Gallegos
+#  Argentina
+#   Rio_Gallegos
 TimeZone::Register.timezone "America/Argentina/Rio_Gallegos" do |tz|
   tz.offset :o0, -16612, 0, :LMT
   tz.offset :o1, -15408, 0, :CMT

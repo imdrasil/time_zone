@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# La_Paz
+#  La_Paz
 TimeZone::Register.timezone "America/La_Paz" do |tz|
   tz.offset :o0, -16356, 0, :LMT
   tz.offset :o1, -16356, 0, :CMT

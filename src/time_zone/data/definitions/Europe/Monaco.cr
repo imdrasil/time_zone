@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Monaco
+#  Monaco
 TimeZone::Register.timezone "Europe/Monaco" do |tz|
   tz.offset :o0, 1772, 0, :LMT
   tz.offset :o1, 561, 0, :PMT

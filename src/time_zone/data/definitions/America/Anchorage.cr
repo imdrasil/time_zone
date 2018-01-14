@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Anchorage
+#  Anchorage
 TimeZone::Register.timezone "America/Anchorage" do |tz|
   tz.offset :o0, 50424, 0, :LMT
   tz.offset :o1, -35976, 0, :LMT

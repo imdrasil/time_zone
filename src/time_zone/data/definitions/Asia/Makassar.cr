@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Makassar
+#  Makassar
 TimeZone::Register.timezone "Asia/Makassar" do |tz|
   tz.offset :o0, 28656, 0, :LMT
   tz.offset :o1, 28656, 0, :MMT

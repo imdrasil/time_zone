@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # America
-# Noronha
+#  Noronha
 TimeZone::Register.timezone "America/Noronha" do |tz|
   tz.offset :o0, -7780, 0, :LMT
   tz.offset :o1, -7200, 0, :"-02"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Kabul
+#  Kabul
 TimeZone::Register.timezone "Asia/Kabul" do |tz|
   tz.offset :o0, 16608, 0, :LMT
   tz.offset :o1, 14400, 0, :"+04"

@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Europe
-# Tirane
+#  Tirane
 TimeZone::Register.timezone "Europe/Tirane" do |tz|
   tz.offset :o0, 4760, 0, :LMT
   tz.offset :o1, 3600, 0, :CET

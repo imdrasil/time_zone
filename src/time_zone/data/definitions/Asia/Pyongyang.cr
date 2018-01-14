@@ -1,10 +1,8 @@
-# encoding: UTF-8
-
 # This file contains data derived from the IANA Time Zone Database
 # (http://www.iana.org/time-zones).
 
 # Asia
-# Pyongyang
+#  Pyongyang
 TimeZone::Register.timezone "Asia/Pyongyang" do |tz|
   tz.offset :o0, 30180, 0, :LMT
   tz.offset :o1, 30600, 0, :KST
