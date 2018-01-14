@@ -1,50 +1,70 @@
 module TimeZone
-  struct Time
-  end
-
-  class Transition
-    include Comparable(self)
-
-    getter year : Int32, month : Int32, timestamp : Int64, offset : Offset
-
-    def initialize(@year, @month, @timestamp, @offset)
-    end
-
-    def <=>(other : self)
-      timestamp <=> other.timestamp
-    end
-  end
-
-  class Zone
-    getter name : String
-
-    @period_set : PeriodSet = PeriodSet.new
-
-    @@zones : Hash(String, Zone) = {} of String => Zone
-    @@default_zone : Zone?
-    @@utc_zone : Zone?
-
-    def initialize(@name)
-    end
-
-    def initialize(@name, @period_set)
-    end
-
-    def local_to_utc(time : ::Time)
-      @period_set.find_in_local(time).to_utc(time)
-    end
-
-    def utc_to_local(time : ::Time)
-      @period_set.to_local(time)
-    end
-
-    def now(dst = :none)
-      utc_to_local(::Time.utc_now)
-    end
+  abstract class IZone
+    abstract def same_as?(other)
+    abstract def name
+    abstract def period_for_local(*args)
+    abstract def period_for_utc(*args)
+    abstract def now(dst)
+    abstract def new(*args, **tuple)
 
     def new
       seconds, nanoseconds = Crystal::System::Time.compute_utc_seconds_and_nanoseconds
       new(seconds, nanoseconds)
+    end
+
+    def identifier
+      name
+    end
+
+    def friendly_identifier(skip_first_part = false)
+      parts = identifier.split('/')
+      if parts.size == 1
+        parts[0]
+      else
+        prefix = skip_first_part ? nil : "#{parts[0]} - "
+
+        parts = parts[1..-1].map do |part|
+          part = part.gsub(/_/, ' ')
+
+          if part.index(/[a-z]/)
+            # Missing a space if a lower case followed by an upper case and the
+            # name isn't McXxxx.
+            part = part.gsub(/([^M][a-z])([A-Z])/) do |_, matched|
+              "#{matched[1]} #{matched[2]}"
+            end
+
+            # Missing an apostrophe if two consecutive upper case characters.
+            part = part.gsub(/([A-Z])([A-Z])/) do |_, matched|
+              "#{matched[1]}'#{matched[2]}"
+            end
+          end
+
+          part
+        end
+
+        "#{prefix}#{parts.reverse.join(", ")}"
+      end
+    end
+
+    def to_s(io)
+      io << friendly_identifier
+    end
+
+    def to_local(time : Time)
+      if same_as?(time.zone)
+        time
+      else
+        utc_time = time.zone.local_to_utc(time.to_time)
+        epoch(utc_to_local(utc_time).epoch)
+      end
+    end
+
+    def local_to_utc(time : ::Time, dst = :none)
+      period_for_local(time, dst).to_utc(time)
+    end
+
+    def utc_to_local(time : ::Time)
+      period_for_utc(time).to_local(time)
     end
 
     # Returns a new `Time` instance that corresponds to the number
@@ -71,6 +91,59 @@ module TimeZone
       new(seconds: seconds, nanoseconds: nanoseconds.to_i)
     end
 
+    def utc?
+      same_as?(self.class.utc)
+    end
+
+    def local?
+      same_as?(self.class.default)
+    end
+
+    def same_as?(other : LinkedZone)
+      other.same_as?(self)
+    end
+
+    def same_as?(other : Zone)
+      name == other.name
+    end
+
+    def kind_of_gmt?
+      @name.starts_with?("Etc/GMT") || @name.starts_with?("GMT")
+    end
+
+    protected def absolute_days(year, month, day)
+      days = ::Time.leap_year?(year) ? ::Time::DAYS_MONTH_LEAP : ::Time::DAYS_MONTH
+
+      temp = 0
+      m = 1
+      while m < month
+        temp += days[m]
+        m += 1
+      end
+
+      (day - 1) + temp + (365*(year - 1)) + ((year - 1)/4) - ((year - 1)/100) + ((year - 1)/400)
+    end
+  end
+
+  class Zone < IZone
+    getter name : String
+
+    @period_set : PeriodSet = PeriodSet.new
+
+    @@zones : Hash(String, Zone) = {} of String => Zone
+    @@default_zone : Zone?
+    @@utc_zone : Zone?
+
+    def initialize(@name)
+    end
+
+    def initialize(@name, @period_set)
+    end
+
+    def now(dst = :none)
+      utc_to_local(::Time.utc_now)
+    end
+
     def new(year, month, day, hour = 0, minute = 0, second = 0, *, nanosecond = 0)
       unless 1 <= year <= 9999 &&
              1 <= month <= 12 &&
@@ -95,29 +168,29 @@ module TimeZone
 
     # TODO: add dst
     def new(*, seconds : Int64, nanoseconds : Int32)
-      period = @period_set.find_in_local(seconds)
+      period = period_for_local(seconds)
       Time.new(seconds: seconds, nanoseconds: nanoseconds, zone: self, period: period)
     end
 
-    def utc?
-      @name == "Etc/UTC"
+    def new(time : ::Time)
+      period = period_for_local(seconds)
+      Time.new(seconds: time.seconds, nanoseconds: time.nanoseconds, zone: self, period: period)
     end
 
-    def kind_of_gmt?
-      @name.starts_with?("Etc/GMT") || @name.starts_with?("GMT")
+    def period_for_local(*args)
+      @period_set.find_in_local(*args)
     end
 
-    protected def absolute_days(year, month, day)
-      days = ::Time.leap_year?(year) ? ::Time::DAYS_MONTH_LEAP : ::Time::DAYS_MONTH
+    def period_for_utc(*args)
+      @period_set.find_in_utc(*args)
+    end
 
-      temp = 0
-      m = 1
-      while m < month
-        temp += days[m]
-        m += 1
-      end
+    def self.all
+      @@zones.values
+    end
 
-      (day - 1) + temp + (365*(year - 1)) + ((year - 1)/4) - ((year - 1)/100) + ((year - 1)/400)
+    def self.all_identifiers
+      @@zones.keys
     end
 
     def self.utc
@@ -142,31 +215,13 @@ module TimeZone
     end
 
     def self.get(name : String)
-      zone = @@zones[name]?
-      if zone
-        return zone.not_nil!
-      else
-        raise %(Unknown time zone "#{name}")
-      end
+      @@zones[name]
+    rescue e : KeyError
+      raise InvalidTimeZoneName.new(name)
     end
 
     def self.add(zone)
       @@zones[zone.name] = zone
-    end
-  end
-
-  class LinkedZone < Zone
-    getter linked_zone_name : String
-
-    delegate :new, :now, :utc_to_local, :local_to_utc, :utc?, to: :linked_zone
-
-    @linked_zone : Zone?
-
-    def initialize(@name, @linked_zone_name)
-    end
-
-    def linked_zone
-      @linked_zone ||= Zone.get(@linked_zone_name)
     end
   end
 end

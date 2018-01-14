@@ -22,6 +22,10 @@ module TimeZone
       offset.dst_offset != 0
     end
 
+    def sdt?
+      !dst?
+    end
+
     def <=>(time : ::Time)
       self.<=>(time.epoch)
     end

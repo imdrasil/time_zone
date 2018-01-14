@@ -1,5 +1,4 @@
 require "./spec_helper"
-require "../src/time_zone/time"
 
 describe TimeZone::Time do
   described_class = TimeZone::Time
@@ -31,7 +30,7 @@ describe TimeZone::Time do
     end
   end
 
-  describe "::to_utc" do
+  describe "#to_utc" do
     it "returns self if already in UTC" do
       # NOTE: we can't check if 2 instances of struct are same
       time = utc.new(2010, 10, 10, 10, 10, 10)
@@ -39,5 +38,22 @@ describe TimeZone::Time do
     end
 
     it { hst.new(2010, 10, 10, 10, 10, 10).to_utc.should eq(utc.new(2010, 10, 10, 20, 10, 10)) }
+  end
+
+  describe "#to_local" do
+    it "returns self if already in local time" do
+      with_default_time_zone(utc) do
+        time = utc.new(2010, 10, 10, 10, 10, 10)
+        time.to_local.should eq(time)
+      end
+    end
+
+    it do
+      with_default_time_zone(utc) do
+        time = hst.new(2018, 1, 13, 10, 10, 10)
+        time = time.to_local
+        time.should eq(utc.new(2018, 1, 13, 20, 10, 10))
+      end
+    end
   end
 end

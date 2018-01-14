@@ -1,16 +1,21 @@
 # require "./time_zone/*"
 
 module TimeZone
+  struct Time
+  end
 end
 
 require "./time_zone/version"
 
 require "./time_zone/utils"
+require "./time_zone/exceptions"
 
 require "./time_zone/offset"
 require "./time_zone/period"
 require "./time_zone/period_set"
+require "./time_zone/transition"
 require "./time_zone/zone"
+require "./time_zone/linked_zone"
 require "./time_zone/time"
 require "./time_zone/country"
 require "./time_zone/register"
@@ -22,6 +27,10 @@ require "./time_zone/data/definitions/*"
 
 require "./time_zone/data/definitions/Africa/*"
 require "./time_zone/data/definitions/America/*"
+require "./time_zone/data/definitions/America/Argentina/*"
+require "./time_zone/data/definitions/America/Indiana/*"
+require "./time_zone/data/definitions/America/Kentucky/*"
+require "./time_zone/data/definitions/America/North_Dakota/*"
 require "./time_zone/data/definitions/Antarctica/*"
 require "./time_zone/data/definitions/Arctic/*"
 require "./time_zone/data/definitions/Asia/*"

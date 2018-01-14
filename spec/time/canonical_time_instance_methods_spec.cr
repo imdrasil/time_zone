@@ -1,5 +1,7 @@
 require "../spec_helper"
 
+# This test suite tests a lot of TimeZone::Time, TimeZone::Time::CnonicalTimeInstanceMethods
+# TimeZone::Time::Format, TimeZone::Time::Parser and TimeZone::Time::Formatter methods.
 describe TimeZone::Time::CanonicalTimeInstanceMethods do
   described_class = TimeZone::Time
   utc = TimeZone::Zone.utc
@@ -299,7 +301,6 @@ describe TimeZone::Time::CanonicalTimeInstanceMethods do
     t.to_s("%Y-%m-hello").should eq("2014-01-hello")
 
     t = utc.new 2014, 1, 2, 3, 4, 5, nanosecond: 6
-    puts t.epoch
     t.to_s("%s").should eq("1388631845")
   end
 
@@ -393,25 +394,21 @@ describe TimeZone::Time::CanonicalTimeInstanceMethods do
 
   it do
     time = described_class.parse("2014-10-31 10:11:12 -06:00 hi", "%F %T %z hi")
-    time.local?.should be_true
     time.to_utc.to_s.should eq("2014-10-31 16:11:12 UTC")
   end
 
   it do
     time = described_class.parse("2014-10-31 10:11:12 +05:00 hi", "%F %T %z hi")
-    time.local?.should be_true
     time.to_utc.to_s.should eq("2014-10-31 05:11:12 UTC")
   end
 
   it do
     time = described_class.parse("2014-10-31 10:11:12 -06:00:00 hi", "%F %T %z hi")
-    time.local?.should be_true
     time.to_utc.to_s.should eq("2014-10-31 16:11:12 UTC")
   end
 
   it do
     time = described_class.parse("2014-10-31 10:11:12 -060000 hi", "%F %T %z hi")
-    time.local?.should be_true
     time.to_utc.to_s.should eq("2014-10-31 16:11:12 UTC")
   end
 
@@ -622,27 +619,6 @@ describe TimeZone::Time::CanonicalTimeInstanceMethods do
   it "compares different kinds" do
     time = zone.now
     (time.to_utc <=> time).should eq(0)
-  end
-
-  # NOTE: modified
-  it %(changes timezone with ENV["TZ"]) do
-    old_tz = ENV["TZ"]?
-
-    begin
-      ENV["TZ"] = "America/New_York"
-      offset1 = described_class.local_offset_in_minutes
-      TimeZone::Zone.__clear_default_zone
-
-      ENV["TZ"] = "Europe/Berlin"
-      offset2 = described_class.local_offset_in_minutes
-
-      TimeZone::Zone.__clear_default_zone
-
-      offset1.should_not eq(offset2)
-    ensure
-      ENV["TZ"] = old_tz
-      TimeZone::Zone.__clear_default_zone
-    end
   end
 
   it "does diff of utc vs local time" do

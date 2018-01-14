@@ -1,20 +1,12 @@
-module TimeZone
-  struct Time
-  end
-end
-
 require "./time/formatter"
 require "./time/parser"
 require "./time/format"
-
 require "./time/canonical_time_instance_methods"
-require "./time/canonical_time_class_methods"
 
 module TimeZone
   struct Time
     include Comparable(self)
     include CanonicalTimeInstanceMethods
-    extend CanonicalTimeClassMethods
 
     getter zone : Zone, period : IPeriod
 
@@ -25,10 +17,21 @@ module TimeZone
       Zone.default.new(seconds, nanoseconds)
     end
 
-    def self.new(time : LibC::Timespec, _kind = Kind::Unspecified)
+    def self.new(time : LibC::Timespec, _kind = Kind::Utc)
       seconds = UNIX_SECONDS + time.tv_sec
       nanoseconds = time.tv_nsec.to_i
       Zone.default.new(seconds: seconds, nanoseconds: nanoseconds)
+    end
+
+    # Parses a Time in the given *time* string, using the given *pattern* (see
+    # `Time::Format`).
+    #
+    # ```
+    # Time.parse("2016-04-05", "%F") # => 2016-04-05 00:00:00
+    # ```
+    # TODO: format
+    def self.parse(time : String, pattern : String, zone : Zone? = nil) : Time
+      Format.new(pattern, zone).parse(time)
     end
 
     def initialize(*, @seconds : Int64, @nanoseconds : Int32, @zone, @period)
@@ -105,14 +108,17 @@ module TimeZone
       zone.utc?
     end
 
-    # Returns `true` if time isn't in the *UTC* zone.
+    # Returns `true` if time is in the default zone.
     def local? : Bool
-      !zone.utc?
+      zone.local?
     end
 
     def <=>(other : self)
-      own_utc = to_utc
-      other_utc = other.to_utc
+      if zone.same_as?(other.zone)
+        own_utc, other_utc = self, other
+      else
+        own_utc, other_utc = to_utc, other.to_utc
+      end
 
       cmp = own_utc.total_seconds <=> other_utc.total_seconds
       cmp = own_utc.nanosecond <=> other_utc.nanosecond if cmp == 0
@@ -188,13 +194,12 @@ module TimeZone
       if local?
         self
       else
-        utc_time = zone.local_to_utc(to_time)
-        zone.utc_to_local(utc_time).to_time_zone_time
+        Zone.default.to_local(self)
       end
     end
 
     def to_time
-      ::Time.new(seconds: @seconds, nanoseconds: @nanoseconds, kind: Kind::Unspecified)
+      ::Time.new(seconds: @seconds, nanoseconds: @nanoseconds, kind: Kind::Utc)
     end
   end
 end

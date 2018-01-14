@@ -359,8 +359,6 @@ module TZInfo
           FileUtils.mkdir_p(dir)
           
           open_file(File.join(dir, 'countries.cr'), 'w', :external_encoding => 'UTF-8', :universal_newline => true) do |file|
-            file.puts('# encoding: UTF-8')
-            file.puts('')
             file.puts('# This file contains data derived from the IANA Time Zone Database')
             file.puts('# (http://www.iana.org/time-zones).')
             file.puts('')

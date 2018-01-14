@@ -19,7 +19,7 @@ module TimeZone
       @periods << rule
     end
 
-    def find_in_utc(time : ::Time | Int64)
+    def find_in_utc(time : Int64)
       if @cached_period
         cp = @cached_period.not_nil!
         if cp.includes?(time)
@@ -32,12 +32,12 @@ module TimeZone
         @cached_period = cp
         return cp.not_nil!
       else
-        raise "Ambiguous Time"
+        raise AmbiguousTime.new(::Time.epoch(time))
       end
     end
 
-    def to_local(time : ::Time)
-      find_in_utc(time).to_local(time)
+    def find_in_utc(time : ::Time)
+      find_in_utc(time.epoch)
     end
 
     def find_in_local(time : ::Time, dst : Symbol = :none)
@@ -59,15 +59,15 @@ module TimeZone
       if period1_satisfied && period2_satisfied
         case dst
         when :none
-          raise "Ambiguous time"
+          raise AmbiguousTime.new(::Time.epoch(time))
         when :dst
           return period1 if period1.dst?
           return period2 if period2.dst?
-          raise "Ambiguous time"
+          raise AmbiguousTime.new(::Time.epoch(time))
         when :sdt
           return period1 unless period1.dst?
           return period2 unless period2.dst?
-          raise "Ambiguous time"
+          raise AmbiguousTime.new(::Time.epoch(time))
         else
           raise ArgumentError.new("Wrong dst argument")
         end
