@@ -13,6 +13,10 @@ module TimeZone
       @zones.map { |zone| Zone.get(zone) }
     end
 
+    def zone_identifiers
+      @zones
+    end
+
     def to_s(io)
       io << name
     end

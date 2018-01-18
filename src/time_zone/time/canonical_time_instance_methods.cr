@@ -22,12 +22,12 @@ module TimeZone
         self
       end
 
-      # Returns a `Time` that is later than this `Time` by the `Time::Span` *span*.
+      # Returns a `TimeZone::Time` that is later than this `TimeZone::Time` by the `Time::Span` *span*.
       def +(span : Span) : Time
         add_span span.to_i, span.nanoseconds
       end
 
-      # Returns a `Time` that is earlier than this `Time` by the `Time::Span` *span*.
+      # Returns a `TimeZone::Time` that is earlier than this `TimeZone::Time` by the `Time::Span` *span*.
       def -(span : Span) : Time
         add_span -span.to_i, -span.nanoseconds
       end
@@ -105,7 +105,6 @@ module TimeZone
 
       def_hash total_seconds, nanosecond
 
-      # TODO: format
       def inspect(io : IO)
         Format.new("%F %T").format(self, io)
 
@@ -118,20 +117,18 @@ module TimeZone
         io
       end
 
-      # Formats this time using the given format (see `Time::Format`).
+      # Formats this time using the given format (see `TimeZone::Time::Format`).
       #
       # ```
-      # time = Time.new(2016, 4, 5)
+      # time = TimeZone::utc.new(2016, 4, 5)
       # time.to_s("%F") # => "2016-04-05"
       # ```
-      # TODO: format
       def to_s(format : String) : String
         Format.new(format).format(self)
       end
 
-      # Formats this time using the given format (see `Time::Format`)
+      # Formats this time using the given format (see `TimeZone::Time::Format`)
       # into the given *io*.
-      # TODO: format
       def to_s(format : String, io : IO) : Nil
         Format.new(format).format(self, io)
       end
@@ -139,7 +136,7 @@ module TimeZone
       # Returns the number of seconds since the Epoch for this time.
       #
       # ```
-      # time = Time.parse("2016-01-12 03:04:05 UTC", "%F %T %z")
+      # time = TimeZone::Time.parse("2016-01-12 03:04:05 UTC", "%F %T %z")
       # time.epoch # => 1452567845
       # ```
       def epoch : Int64
@@ -149,7 +146,7 @@ module TimeZone
       # Returns the number of milliseconds since the Epoch for this time.
       #
       # ```
-      # time = Time.parse("2016-01-12 03:04:05.678 UTC", "%F %T.%L %z")
+      # time = TimeZone::Time.parse("2016-01-12 03:04:05.678 UTC", "%F %T.%L %z")
       # time.epoch_ms # => 1452567845678
       # ```
       def epoch_ms : Int64
@@ -160,7 +157,7 @@ module TimeZone
       # as a `Float64`.
       #
       # ```
-      # time = Time.parse("2016-01-12 03:04:05.678 UTC", "%F %T.%L %z")
+      # time = TimeZone::Time.parse("2016-01-12 03:04:05.678 UTC", "%F %T.%L %z")
       # time.epoch_f # => 1452567845.678
       # ```
       def epoch_f : Float64

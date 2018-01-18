@@ -1,8 +1,8 @@
-# Specifies the format to convert a `Time` to and from a `String`.
+# Specifies the format to convert a `TimeZone::Time` to and from a `String`.
 #
 # The pattern of a format is a `String` with directives. Directives
 # being with a percent (`%`) character. Any text not listed as a directive
-# will be passed/parsed through the output/input string.
+# will be passed/parsed through the output/input string. Forks same as `Time`.
 #
 # The directives are:
 #
@@ -63,26 +63,26 @@ module TimeZone
       # Returns the string pattern of this format.
       getter pattern : String
 
-      # Creates a new `Time::Format` with the given *pattern*. The given time
+      # Creates a new `TimeZone::Time::Format` with the given *pattern*. The given time
       # *zone* will be used when parsing a `Time` and no time zone is found in it.
       def initialize(@pattern : String, @zone : Zone? = nil)
       end
 
-      # Parses a string into a `Time`.
+      # Parses a string into a `TimeZone::Time`.
       def parse(string, zone : Zone? = @zone) : Time
         parser = Parser.new(string)
         parser.visit(pattern)
         parser.time(zone)
       end
 
-      # Turns a `Time` into a `String`.
+      # Turns a `TimeZone::Time` into a `String`.
       def format(time : Time) : String
         String.build do |str|
           format time, str
         end
       end
 
-      # Formats a `Time` into the given *io*.
+      # Formats a `TimeZone::Time` into the given *io*.
       def format(time : Time, io : IO)
         formatter = Formatter.new(time, io)
         formatter.visit(pattern)

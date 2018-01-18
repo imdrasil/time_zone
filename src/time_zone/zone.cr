@@ -67,21 +67,23 @@ module TimeZone
       period_for_utc(time).to_local(time)
     end
 
-    # Returns a new `Time` instance that corresponds to the number
+    # Returns a new `TimeZone::Time` instance that corresponds to the number
     # seconds elapsed since the unix epoch (00:00:00 UTC on 1 January 1970).
     #
     # ```
-    # Time.epoch(981173106) # => 2001-02-03 04:05:06 UTC
+    # zone = TimeZone::Zone.get("HST")
+    # zone.epoch(981173106) # => 2001-02-03 04:05:06 UTC
     # ```
     def epoch(seconds : Int)
       new(seconds: ::Time::UNIX_SECONDS + seconds, nanoseconds: 0)
     end
 
-    # Returns a new `Time` instance that corresponds to the number
+    # Returns a new `TimeZone::Time` instance that corresponds to the number
     # milliseconds elapsed since the unix epoch (00:00:00 UTC on 1 January 1970).
     #
     # ```
-    # time = Time.epoch_ms(981173106789) # => 2001-02-03 04:05:06.789 UTC
+    # zone = TimeZone::Zone.get("HST")
+    # time = zone.epoch_ms(981173106789) # => 2001-02-03 04:05:06.789 UTC
     # time.millisecond                   # => 789
     # ```
     def epoch_ms(milliseconds : Int)

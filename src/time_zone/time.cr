@@ -23,13 +23,12 @@ module TimeZone
       Zone.default.new(seconds: seconds, nanoseconds: nanoseconds)
     end
 
-    # Parses a Time in the given *time* string, using the given *pattern* (see
-    # `Time::Format`).
+    # Parses a TimeZone::Time in the given *time* string, using the given *pattern* (see
+    # `TimeZone::Time::Format`).
     #
     # ```
-    # Time.parse("2016-04-05", "%F") # => 2016-04-05 00:00:00
+    # TimeZone::Time.parse("2016-04-05", "%F") # => 2016-04-05 00:00:00
     # ```
-    # TODO: format
     def self.parse(time : String, pattern : String, zone : Zone? = nil) : Time
       Format.new(pattern, zone).parse(time)
     end
@@ -86,7 +85,7 @@ module TimeZone
 
     # Returns the amount of time between *other* and `self`.
     #
-    # The amount can be negative if `self` is a `Time` that happens before *other*.
+    # The amount can be negative if `self` is a `TimeZone::Time` that happens before *other*.
     def -(other : Time) : Span
       if zone != other.zone
         to_utc - other.to_utc
@@ -103,7 +102,7 @@ module TimeZone
       zone.new(year, month, day)
     end
 
-    # Returns `true` if `Kind` is set to *Utc*.
+    # Returns `true` if `zone` is set to *Utc*.
     def utc? : Bool
       zone.utc?
     end
@@ -180,7 +179,7 @@ module TimeZone
       zone.new(year, month, day, 12, 0, 0, nanosecond: 0)
     end
 
-    # Returns a copy of this `Time` converted to UTC.
+    # Returns a copy of this `TimeZone::Time` converted to UTC.
     def to_utc : Time
       if utc?
         self
@@ -189,7 +188,7 @@ module TimeZone
       end
     end
 
-    # Returns a copy of this `Time` converted to the local time zone.
+    # Returns a copy of this `TimeZone::Time` converted to the local time zone.
     def to_local : Time
       if local?
         self
