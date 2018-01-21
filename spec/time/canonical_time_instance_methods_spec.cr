@@ -305,7 +305,7 @@ describe TimeZone::Time::CanonicalTimeInstanceMethods do
   end
 
   it "parses empty" do
-    t = Time.parse("", "")
+    t = described_class.parse("", "")
     t.year.should eq(1)
     t.month.should eq(1)
     t.day.should eq(1)

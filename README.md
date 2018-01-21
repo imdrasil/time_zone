@@ -71,9 +71,42 @@ A list of all the available country codes can be obtained using the
 `TimeZone::Country.all_codes` method. `TimeZone::Country.all` can be called to get
 an `Array` of all the `Country` instances.
 
+### TimeZone::Time
+
+To hold time zone in the time object `TimeZone::Time` struct could be used. It provides almost same interface as the `Time` does. Also there is 2 methods added to `Time`:
+- `#to_time_zone_time` - converts current time object to `TimeZone::Time` in default time zone;
+- `::zone` - returns default time zone.
+
+To set or get default time zone next code can be used:
+
+```crystal
+TimeZone::Zone.default # tries to read time zone from `TZ`
+					   # environment variable, otherwise UTC 
+					   # will be used
+TimeZone::Zone.default = "America/New_York"
+# or
+TimeZone::Zone.default = TimeZone::Zone.get("America/New_York")
+```
+
+To create specific date in time zone:
+
+```crystal
+zone.new(2010, 10, 19)
+Time.zone.new(2012, 12, 12) # in the default time zone
+```
+
+Also `TimeZone::Time` could be parsed from string with grepping given time zone offset:
+
+```crystal
+# Time zone will be set to Etc/GMT-5
+TimeZone::Time.parse("2014-10-31 10:11:12 +05:00", "%F %T %z")
+```
+
 ## Development
 
-TODO: Write development instructions here
+### Data Generating
+
+All code in `src/time_zone/data` folder is automatically generated so please don't try to make any change there because they will be lost after next regenerating. To generate new version please paste all files from original [repo](https://github.com/eggert/tz) to the `data` folder in the this repo root and invoke `ruby scripts/build.rb`.
 
 ## Contributing
 

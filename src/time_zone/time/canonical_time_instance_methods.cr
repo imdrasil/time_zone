@@ -6,6 +6,9 @@ module TimeZone
       alias Span = ::Time::Span
       alias MonthSpan = ::Time::MonthSpan
 
+      # NOTE: all furher constants are deprecated - use original ones
+      # from the `Time`
+
       SECONDS_PER_DAY             = ::Time::SECONDS_PER_DAY
       SECONDS_PER_HOUR            = ::Time::SECONDS_PER_HOUR
       SECONDS_PER_MINUTE          = ::Time::SECONDS_PER_MINUTE
@@ -108,8 +111,7 @@ module TimeZone
       def inspect(io : IO)
         Format.new("%F %T").format(self, io)
 
-        case
-        when utc?
+        if utc?
           io << " UTC"
         else
           Format.new(" %:z").format(self, io)
