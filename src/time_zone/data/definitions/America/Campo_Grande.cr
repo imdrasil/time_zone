@@ -97,24 +97,24 @@ TimeZone::Register.timezone "America/Campo_Grande" do |tz|
   tz.transition 2017, 2, :o1, 1487473200
   tz.transition 2017, 10, :o2, 1508040000
   tz.transition 2018, 2, :o1, 1518922800
-  tz.transition 2018, 10, :o2, 1540094400
+  tz.transition 2018, 11, :o2, 1541304000
   tz.transition 2019, 2, :o1, 1550372400
-  tz.transition 2019, 10, :o2, 1571544000
+  tz.transition 2019, 11, :o2, 1572753600
   tz.transition 2020, 2, :o1, 1581822000
-  tz.transition 2020, 10, :o2, 1602993600
+  tz.transition 2020, 11, :o2, 1604203200
   tz.transition 2021, 2, :o1, 1613876400
-  tz.transition 2021, 10, :o2, 1634443200
+  tz.transition 2021, 11, :o2, 1636257600
   tz.transition 2022, 2, :o1, 1645326000
-  tz.transition 2022, 10, :o2, 1665892800
+  tz.transition 2022, 11, :o2, 1667707200
   tz.transition 2023, 2, :o1, 1677380400
-  tz.transition 2023, 10, :o2, 1697342400
+  tz.transition 2023, 11, :o2, 1699156800
   tz.transition 2024, 2, :o1, 1708225200
-  tz.transition 2024, 10, :o2, 1729396800
+  tz.transition 2024, 11, :o2, 1730606400
   tz.transition 2025, 2, :o1, 1739674800
-  tz.transition 2025, 10, :o2, 1760846400
+  tz.transition 2025, 11, :o2, 1762056000
   tz.transition 2026, 2, :o1, 1771729200
-  tz.transition 2026, 10, :o2, 1792296000
+  tz.transition 2026, 11, :o2, 1793505600
   tz.transition 2027, 2, :o1, 1803178800
-  tz.transition 2027, 10, :o2, 1823745600
+  tz.transition 2027, 11, :o2, 1825560000
   tz.transition 2028, 2, :o1, 1834628400
 end

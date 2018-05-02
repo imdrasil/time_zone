@@ -116,9 +116,9 @@ TimeZone::Register.timezone "Asia/Hebron" do |tz|
   tz.transition 2016, 10, :o1, 1477692000
   tz.transition 2017, 3, :o2, 1490396400
   tz.transition 2017, 10, :o1, 1509141600
-  tz.transition 2018, 3, :o2, 1522450800
+  tz.transition 2018, 3, :o2, 1521846000
   tz.transition 2018, 10, :o1, 1540591200
-  tz.transition 2019, 3, :o2, 1553900400
+  tz.transition 2019, 3, :o2, 1553295600
   tz.transition 2019, 10, :o1, 1572040800
   tz.transition 2020, 3, :o2, 1585350000
   tz.transition 2020, 10, :o1, 1604095200
@@ -128,9 +128,9 @@ TimeZone::Register.timezone "Asia/Hebron" do |tz|
   tz.transition 2022, 10, :o1, 1666994400
   tz.transition 2023, 3, :o2, 1679698800
   tz.transition 2023, 10, :o1, 1698444000
-  tz.transition 2024, 3, :o2, 1711753200
+  tz.transition 2024, 3, :o2, 1711148400
   tz.transition 2024, 10, :o1, 1729893600
-  tz.transition 2025, 3, :o2, 1743202800
+  tz.transition 2025, 3, :o2, 1742598000
   tz.transition 2025, 10, :o1, 1761343200
   tz.transition 2026, 3, :o2, 1774652400
   tz.transition 2026, 10, :o1, 1793397600

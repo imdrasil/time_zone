@@ -8,6 +8,6 @@ TimeZone::Register.timezone "Africa/Bissau" do |tz|
   tz.offset :o1, -3600, 0, :"-01"
   tz.offset :o2, 0, 0, :GMT
   
-  tz.transition 1912, 1, :o1, -1830380260, 10451818987, 4320
+  tz.transition 1912, 1, :o1, -1830380400, 58065661, 24
   tz.transition 1975, 1, :o2, 157770000
 end

@@ -769,7 +769,7 @@ TimeZone::Register.country "SS", "South Sudan" do |c|
   c.timezone "Africa/Juba", 97, 20, 1897, 60
 end
 TimeZone::Register.country "ST", "Sao Tome & Principe" do |c|
-  c.timezone "Africa/Abidjan", 319, 60, -121, 30
+  c.timezone "Africa/Sao_Tome", 1, 3, 101, 15
 end
 TimeZone::Register.country "SV", "El Salvador" do |c|
   c.timezone "America/El_Salvador", 137, 10, -446, 5
@@ -877,7 +877,7 @@ TimeZone::Register.country "US", "United States" do |c|
   c.timezone "Pacific/Honolulu", 15341, 720, -18943, 120, "Hawaii"
 end
 TimeZone::Register.country "UY", "Uruguay" do |c|
-  c.timezone "America/Montevideo", -2093, 60, -3371, 60
+  c.timezone "America/Montevideo", -41891, 1200, -4497, 80
 end
 TimeZone::Register.country "UZ", "Uzbekistan" do |c|
   c.timezone "Asia/Samarkand", 119, 3, 334, 5, "Uzbekistan (west)"

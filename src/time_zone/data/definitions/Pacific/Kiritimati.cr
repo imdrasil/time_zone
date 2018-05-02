@@ -11,5 +11,5 @@ TimeZone::Register.timezone "Pacific/Kiritimati" do |tz|
   
   tz.transition 1901, 1, :o1, -2177415040, 652154203, 270
   tz.transition 1979, 10, :o2, 307622400
-  tz.transition 1995, 1, :o3, 788954400
+  tz.transition 1994, 12, :o3, 788868000
 end

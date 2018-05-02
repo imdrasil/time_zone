@@ -97,24 +97,24 @@ TimeZone::Register.timezone "America/Sao_Paulo" do |tz|
   tz.transition 2017, 2, :o1, 1487469600
   tz.transition 2017, 10, :o2, 1508036400
   tz.transition 2018, 2, :o1, 1518919200
-  tz.transition 2018, 10, :o2, 1540090800
+  tz.transition 2018, 11, :o2, 1541300400
   tz.transition 2019, 2, :o1, 1550368800
-  tz.transition 2019, 10, :o2, 1571540400
+  tz.transition 2019, 11, :o2, 1572750000
   tz.transition 2020, 2, :o1, 1581818400
-  tz.transition 2020, 10, :o2, 1602990000
+  tz.transition 2020, 11, :o2, 1604199600
   tz.transition 2021, 2, :o1, 1613872800
-  tz.transition 2021, 10, :o2, 1634439600
+  tz.transition 2021, 11, :o2, 1636254000
   tz.transition 2022, 2, :o1, 1645322400
-  tz.transition 2022, 10, :o2, 1665889200
+  tz.transition 2022, 11, :o2, 1667703600
   tz.transition 2023, 2, :o1, 1677376800
-  tz.transition 2023, 10, :o2, 1697338800
+  tz.transition 2023, 11, :o2, 1699153200
   tz.transition 2024, 2, :o1, 1708221600
-  tz.transition 2024, 10, :o2, 1729393200
+  tz.transition 2024, 11, :o2, 1730602800
   tz.transition 2025, 2, :o1, 1739671200
-  tz.transition 2025, 10, :o2, 1760842800
+  tz.transition 2025, 11, :o2, 1762052400
   tz.transition 2026, 2, :o1, 1771725600
-  tz.transition 2026, 10, :o2, 1792292400
+  tz.transition 2026, 11, :o2, 1793502000
   tz.transition 2027, 2, :o1, 1803175200
-  tz.transition 2027, 10, :o2, 1823742000
+  tz.transition 2027, 11, :o2, 1825556400
   tz.transition 2028, 2, :o1, 1834624800
 end

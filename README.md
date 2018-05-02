@@ -26,7 +26,8 @@ local = tz.utc_to_local(Time.utc(2005,8,29,15,35,0))
 
 Note that the local Time returned will be kind of UTC (`local.kind` will
 return `Time::Kind::Utc`). This is because the Crystal `Time` class only supports two timezones:
-* UTC 
+
+* UTC
 * the current system local timezone.
 
 To convert from a local time to UTC, the `#local_to_utc` method can be used as
@@ -74,15 +75,16 @@ an `Array` of all the `Country` instances.
 ### TimeZone::Time
 
 To hold time zone in the time object `TimeZone::Time` struct could be used. It provides almost same interface as the `Time` does. Also there is 2 methods added to `Time`:
-- `#to_time_zone_time` - converts current time object to `TimeZone::Time` in default time zone;
-- `::zone` - returns default time zone.
+
+* `#to_time_zone_time` - converts current time object to `TimeZone::Time` in default time zone;
+* `::zone` - returns default time zone.
 
 To set or get default time zone next code can be used:
 
 ```crystal
 TimeZone::Zone.default # tries to read time zone from `TZ`
-					   # environment variable, otherwise UTC 
-					   # will be used
+                       # environment variable, otherwise UTC
+                       # will be used
 TimeZone::Zone.default = "America/New_York"
 # or
 TimeZone::Zone.default = TimeZone::Zone.get("America/New_York")
@@ -106,7 +108,7 @@ TimeZone::Time.parse("2014-10-31 10:11:12 +05:00", "%F %T %z")
 
 ### Data Generating
 
-All code in `src/time_zone/data` folder is automatically generated so please don't try to make any change there because they will be lost after next regenerating. To generate new version please paste all files from original [repo](https://github.com/eggert/tz) to the `data` folder in the this repo root and invoke `ruby scripts/build.rb`.
+All code in `src/time_zone/data` folder is automatically generated so please don't try to make any change there because they will be lost after next regenerating. To generate new version please paste all files from original [repo](https://github.com/eggert/tz) to the `data` folder in this repo root and invoke `ruby scripts/build.rb`.
 
 ## Contributing
 
@@ -118,4 +120,4 @@ All code in `src/time_zone/data` folder is automatically generated so please don
 
 ## Contributors
 
-- [imdrasil](https://github.com/[your-github-name]) Roman Kalnytskyi - creator, maintainer
+* [imdrasil](https://github.com/[your-github-name]) Roman Kalnytskyi - creator, maintainer

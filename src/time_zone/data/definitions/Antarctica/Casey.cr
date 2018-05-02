@@ -14,4 +14,5 @@ TimeZone::Register.timezone "Antarctica/Casey" do |tz|
   tz.transition 2011, 10, :o2, 1319738400
   tz.transition 2012, 2, :o1, 1329843600
   tz.transition 2016, 10, :o2, 1477065600
+  tz.transition 2018, 3, :o1, 1520701200
 end
