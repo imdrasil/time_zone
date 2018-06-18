@@ -17,7 +17,7 @@ module TimeZone
       Zone.default.new(seconds, nanoseconds)
     end
 
-    def self.new(time : LibC::Timespec, _kind = Kind::Utc)
+    def self.new(time : LibC::Timespec, _kind = nil)
       seconds = UNIX_SECONDS + time.tv_sec
       nanoseconds = time.tv_nsec.to_i
       Zone.default.new(seconds: seconds, nanoseconds: nanoseconds)
@@ -198,7 +198,7 @@ module TimeZone
     end
 
     def to_time
-      ::Time.new(seconds: @seconds, nanoseconds: @nanoseconds, kind: Kind::Utc)
+      ::Time.new(seconds: @seconds, nanoseconds: @nanoseconds, kind: nil)
     end
   end
 end
