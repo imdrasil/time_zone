@@ -179,7 +179,7 @@ module TimeZone
       end
 
       def get_month_name
-        MONTH_NAMES[time.month - 1]
+        ::Time::Format::MONTH_NAMES[time.month - 1]
       end
 
       def get_short_month_name
@@ -187,7 +187,7 @@ module TimeZone
       end
 
       def get_day_name
-        DAY_NAMES[time.day_of_week.value]
+        ::Time::Format::DAY_NAMES[time.day_of_week.value]
       end
 
       def get_short_day_name

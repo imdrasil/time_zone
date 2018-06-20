@@ -65,7 +65,7 @@ module TimeZone
         end
 
         string = string.capitalize
-        index = MONTH_NAMES.index &.starts_with?(string)
+        index = ::Time::Format::MONTH_NAMES.index &.starts_with?(string)
         if index
           @month = 1 + index
         else
@@ -104,7 +104,7 @@ module TimeZone
         end
 
         string = string.capitalize
-        index = DAY_NAMES.index &.starts_with?(string)
+        index = ::Time::Format::DAY_NAMES.index &.starts_with?(string)
         unless index
           ::raise "Invalid day name"
         end

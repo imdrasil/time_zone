@@ -198,7 +198,7 @@ module TimeZone
     end
 
     def to_time
-      ::Time.new(seconds: @seconds, nanoseconds: @nanoseconds, kind: nil)
+      ::Time.new(seconds: @seconds, nanoseconds: @nanoseconds, location: ::Time::Location.load("UTC"))
     end
   end
 end
