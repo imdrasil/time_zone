@@ -1,7 +1,7 @@
 module TimeZone
   struct Time
     module CanonicalTimeInstanceMethods
-      alias Kind = ::Time::Kind
+      # alias Kind = ::Time::Kind
       alias DayOfWeek = ::Time::DayOfWeek
       alias Span = ::Time::Span
       alias MonthSpan = ::Time::MonthSpan
@@ -102,7 +102,7 @@ module TimeZone
       end
 
       # Returns `Kind` (UTC/local) of the instance.
-      def kind : Kind
+      def kind # : Kind
         @kind
       end
 

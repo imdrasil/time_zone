@@ -24,7 +24,7 @@ def Time.expect_invalid
 end
 
 def expect_raises_ambiguous_time(time)
-  Spec::Expectations.expect_raises(TimeZone::AmbiguousTime, "#{time.to_s("%Y-%m-%d %H:%M:%S")} is an ambiguous local time") do
+  expect_raises(TimeZone::AmbiguousTime, "#{time.to_s("%Y-%m-%d %H:%M:%S")} is an ambiguous local time") do
     yield
   end
 end

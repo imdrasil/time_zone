@@ -120,4 +120,4 @@ All code in `src/time_zone/data` folder is automatically generated so please don
 
 ## Contributors
 
-* [imdrasil](https://github.com/[your-github-name]) Roman Kalnytskyi - creator, maintainer
+* [imdrasil](https://github.com/imdrasil) Roman Kalnytskyi - creator, maintainer
