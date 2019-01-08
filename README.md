@@ -1,5 +1,7 @@
 # TimeZone [![Build Status](https://travis-ci.org/imdrasil/time_zone.svg)](https://travis-ci.org/imdrasil/time_zone) [![Latest Release](https://img.shields.io/github/release/imdrasil/time_zone.svg)](https://github.com/imdrasil/time_zone/releases) [![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://imdrasil.github.io/time_zone/latest/)
 
+> Crystal already has own logic of taking care of time zones. Therefore prefer [native](https://crystal-lang.org/api/0.27.0/Time/Location.html) crystal implementation over this library.
+
 **Time Zone** provides daylight savings aware transformations between times in different time zones. Also this is a port of ruby [tzinfo](https://github.com/tzinfo/tzinfo) gem.
 
 ## Installation
